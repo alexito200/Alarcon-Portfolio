@@ -1,0 +1,245 @@
+html, body {
+    background-color: var(--background-color);
+}
+html, body[data-theme="dark"] {
+    background-color: var(--background-color);
+}
+/* ThemeToggle */
+#container, #totalContainer{
+    background-color: var(--background-color);
+}
+.title{
+    color: var(--primary-text-color);
+}
+.box {
+    background-color: var(--foreground-color);
+    color: var(--secondary-text-color);
+}
+/* Navbar */
+#navButtons {
+    background-color: #343a40;
+    border-radius: 10px;
+}
+.navbar-collapse {
+    text-align: center;
+}
+#themeButton {
+    background-color: #343a40;
+    border-radius: 10px;
+    color: white;
+}
+.barNav a,
+.barNav a:after,
+.barNav a:before {
+    transition: all .5s;
+}
+.barNav a:hover {
+    color: #000000;
+}
+.barNav a {
+    position:relative;
+    z-index: 1;
+    color: white;
+}
+.barNav a:hover {
+    color: #91640F;
+}
+.barNav a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: #FCA311;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+}
+.barNav a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+#themeButton a,
+#themeButton:after,
+#themeButton:before {
+    transition: all .5s;
+}
+#themeButton:hover {
+    color: #000000;
+}
+#themeButton {
+    position:relative;
+    z-index: 1;
+    color: white;
+}
+#themeButton:hover {
+    color: #91640F;
+}
+#themeButton:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: #FCA311;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+}
+#themeButton:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+/* Hero */
+#heroContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+#heroContainer h1{
+    font-size: 6rem;
+}
+#heroContainer p{
+    font-size: 1.5rem;
+}
+#personImage {
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+}
+#heroTextContainer {
+    color: white;
+    padding-left: 20px;
+}
+#heroTextContainer .btn {
+    border-radius: 50px;
+    font-size: 1.4rem;
+    padding: 10px 12px;
+}
+/* About */
+#aboutContainer {
+    background-color: #343a40;
+    color: white;
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 10%;
+}
+#aboutTextContainer h1 {
+    font-size: 3rem;
+}
+#firstPointContainer,
+#secondPointContainer,
+#thirdPointContainer {
+    max-width: 540px;
+    background-color: #14213D;
+}
+#firstPointContainer img,
+#secondPointContainer img,
+#thirdPointContainer img {
+    width: 50px;
+    height: 50px;
+}
+.pointImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#firstPointContainer:hover,
+#secondPointContainer:hover,
+#thirdPointContainer:hover {
+    /* change the color and add hover animation(reference notion notes, there's a hover effect tip in HTML/CSS page) */
+    background-color: #ab0bcfad;
+}
+/* Experience */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+#xpContainer {
+    margin-top: 18%;
+    margin-bottom: 18%;
+}
+.xp {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+}
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+} 
+.logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(60, 61, 64));
+}
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(100, 102, 107));
+}
+.logos-slide {
+    display: inline-block;
+    animation: 40s slide infinite linear;
+}
+.logos-slide img {
+    height: 120px;
+    margin: 0 40px;
+}
+/* Projects */
+#projectContainer {
+    /* margin-top: 25%; */
+    margin-bottom: 15%;
+}
+#projectCardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#projectCardContainer .projectCard {
+    margin: 30px 30px;
+}
+#projectContainer h1{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+.projectCard .card-body {
+    background-color: #14213D;
+    color: white;
+}
