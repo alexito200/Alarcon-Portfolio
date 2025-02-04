@@ -1,14 +1,14 @@
 import './App.css'
 import './index.css'
-// import "@theme-toggles/react/css/Classic.css"
-// import { Classic } from "@theme-toggles/react"
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { Toggle } from "./context/ThemeToggle";
+import { ReactTyped } from "react-typed";
 
 export const App = () => {
   const [isDark, setIsDark] = useState(true);
+
   return (
 
     <>
@@ -24,13 +24,10 @@ export const App = () => {
               <a className="nav-item nav-link" href="#aboutContainer">About</a>
               <a className="nav-item nav-link" href="#xpContainer">Experience</a>
               <a className="nav-item nav-link" href="#projectContainer">Projects</a>
-              <a className="nav-item nav-link" href="Contact.tsx">
-                <Link to="/contact" style={{textDecoration: "none"}}>Contact</Link>
-              </a>
+              <Link className="nav-item nav-link" to="/contact">Contact</Link>
             </div>
             <div className="ms-auto navbar-nav">
               <a className="nav-item nav-link" id="themeButton" href="#">
-              {/* <Classic style={{color: "white"}} duration={750} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} /> */}
               <Toggle
                 isChecked={isDark}
                 handleChange={() => setIsDark(!isDark)}
@@ -46,7 +43,13 @@ export const App = () => {
             <img id="personImage" src="./person.jpg" alt="..." />
           </div>
           <div id="heroTextContainer">
-            <h1>Hi, My Name</h1>
+            <div id="typewriterContainer">
+              <h1>
+              I&apos;m{" "}
+              <ReactTyped strings={["Alex Alarcon"]} typeSpeed={100} loop />
+              </h1>
+              <p>Full Stack Developer | Passionate about Web Technologies</p>
+            </div>
             <div>
               <p style={{maxWidth:"800px"}}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut iure dignissimos alias temporibus est aliquid eaque.  Consequuntur, facilis in!
@@ -117,37 +120,37 @@ export const App = () => {
           <h1 className="xp">Experience</h1>
           <div className="logos">
             <div className="logos-slide">
-              <img src="./html.png" alt="" />
-              <img src="./css.png" alt="" />
-              <img src="./figma.png" alt="" />
-              <img src="./js.png" alt="" />
-              <img src="./bootstrap.png" alt="" />
-              <img src="./python.png" alt="" />
-              <img src="./mysql.png" alt="" />
-              <img src="./react.png" alt="" />
-              <img src="./flask.png" alt="" />
+              <img src="./html.png" alt="" className="tech-logo" />
+              <img src="./css.png" alt="" className="tech-logo"/>
+              <img src="./figma.png" alt="" className="tech-logo"/>
+              <img src="./js.png" alt="" className="tech-logo"/>
+              <img src="./bootstrap.png" alt="" className="tech-logo"/>
+              <img src="./python.png" alt="" className="tech-logo"/>
+              <img src="./mysql.png" alt="" className="tech-logo"/>
+              <img src="./react.png" alt="" className="tech-logo"/>
+              <img src="./flask.png" alt="" className="tech-logo"/>
             </div>
             <div className="logos-slide">
-              <img src="./html.png" alt="" />
-              <img src="./css.png" alt="" />
-              <img src="./figma.png" alt="" />
-              <img src="./js.png" alt="" />
-              <img src="./bootstrap.png" alt="" />
-              <img src="./python.png" alt="" />
-              <img src="./mysql.png" alt="" />
-              <img src="./react.png" alt="" />
-              <img src="./flask.png" alt="" />
+              <img src="./html.png" alt="" className="tech-logo"/>
+              <img src="./css.png" alt="" className="tech-logo"/>
+              <img src="./figma.png" alt="" className="tech-logo"/>
+              <img src="./js.png" alt="" className="tech-logo"/>
+              <img src="./bootstrap.png" alt="" className="tech-logo"/>
+              <img src="./python.png" alt="" className="tech-logo"/>
+              <img src="./mysql.png" alt="" className="tech-logo"/>
+              <img src="./react.png" alt="" className="tech-logo"/>
+              <img src="./flask.png" alt="" className="tech-logo"/>
             </div>
             <div className="logos-slide">
-              <img src="./html.png" alt="" />
-              <img src="./css.png" alt="" />
-              <img src="./figma.png" alt="" />
-              <img src="./js.png" alt="" />
-              <img src="./bootstrap.png" alt="" />
-              <img src="./python.png" alt="" />
-              <img src="./mysql.png" alt="" />
-              <img src="./react.png" alt="" />
-              <img src="./flask.png" alt="" />
+              <img src="./html.png" alt="" className="tech-logo"/>
+              <img src="./css.png" alt="" className="tech-logo"/>
+              <img src="./figma.png" alt="" className="tech-logo"/>
+              <img src="./js.png" alt="" className="tech-logo"/>
+              <img src="./bootstrap.png" alt="" className="tech-logo"/>
+              <img src="./python.png" alt="" className="tech-logo"/>
+              <img src="./mysql.png" alt="" className="tech-logo"/>
+              <img src="./react.png" alt="" className="tech-logo"/>
+              <img src="./flask.png" alt="" className="tech-logo"/>
             </div>
           </div>
         </div>
@@ -161,25 +164,25 @@ export const App = () => {
           <div className="card projectCard" style={{width: "18rem"}}>
             <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title">Project 1</h5>
+              <h5 className="card-title">React-Flask</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
+              <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
             </div>
           </div>
           <div className="card projectCard" style={{width: "18rem"}}>
             <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title">Project 2</h5>
+              <h5 className="card-title">Comic Book Library</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
+              <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
             </div>
           </div>
           <div className="card projectCard" style={{width: "18rem"}}>
             <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title">Project 3</h5>
+              <h5 className="card-title">Poke API</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
+              <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
             </div>
           </div>
         </div>
