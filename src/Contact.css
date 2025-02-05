@@ -1,5 +1,8 @@
+#totalContainer {
+    height: 100vh;
+}
 #formContainer {
-    /* background-color: #14213D; */
+    background-color: #14213D;
     width: 600px;
     height: 600px;
     padding: 2em;

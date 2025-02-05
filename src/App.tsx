@@ -2,20 +2,32 @@ import './App.css'
 import './index.css'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Toggle } from "./context/ThemeToggle";
 import { ReactTyped } from "react-typed";
 
+
 export const App = () => {
-  const [isDark, setIsDark] = useState(true);
+  const savedTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true;
+  const [isDark, setIsDark] = useState(savedTheme);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDark]);
 
   return (
 
     <>
       <div id='container' data-theme={isDark ? "dark" : "light"}>
         {/* Navbar */}
-        <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="/" style={{color:"white"}}>Alarcon</a>
+        <nav className="navbar navbar-expand-lg mx-2">
+          <a className="navbar-brand" href="/">Alarcon</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"  aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
           </button>
@@ -27,7 +39,7 @@ export const App = () => {
               <Link className="nav-item nav-link" to="/contact">Contact</Link>
             </div>
             <div className="ms-auto navbar-nav">
-              <a className="nav-item nav-link" id="themeButton" href="#">
+              <a className="nav-item nav-link" id="themeButton"href="#">
               <Toggle
                 isChecked={isDark}
                 handleChange={() => setIsDark(!isDark)}
@@ -50,16 +62,17 @@ export const App = () => {
               </h1>
               <p>Full Stack Developer | Passionate about Web Technologies</p>
             </div>
-            <div>
-              <p style={{maxWidth:"800px"}}>
+            <div id="typewriterContainer2">
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut iure dignissimos alias temporibus est aliquid eaque.  Consequuntur, facilis in!
               </p>
             </div>
-            <Link to="/contact">
-              <Button className="btn">
+            <Link to="/contact" className="link-button">
+              <Button className="btn" id="contactButton">
                 Contact Me
               </Button>
             </Link>
+
           </div>
         </div>
 
@@ -72,41 +85,41 @@ export const App = () => {
           <div id="aboutTextContainer">
             <h1>About Me</h1>
 
-            <div className="card mb-3" id="firstPointContainer">
+            <div className="card pointCard mb-3" id="firstPointContainer">
               <div className="row g-0">
                 <div className="col-md-4 pointImgContainer">
                   <img src="./1-circle.svg" className="img-fluid rounded-start pointImg" alt="..." />
                 </div>
                 <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title text-light">First Point</h5>
-                    <p className="card-text text-light">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div className="card-body pointCardBodyItem">
+                    <h5 className="card-title">First Point</h5>
+                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="card mb-3" id="secondPointContainer" style={{maxWidth: "540px"}}>
+            <div className="card pointCard mb-3" id="secondPointContainer" style={{maxWidth: "540px"}}>
               <div className="row g-0">
                 <div className="col-md-4 pointImgContainer">
                   <img src="./2-circle.svg" className="img-fluid rounded-start" alt="..." />
                 </div>
                 <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title text-light">Second Point</h5>
-                    <p className="card-text text-light">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div className="card-body pointCardBodyItem">
+                    <h5 className="card-title">Second Point</h5>
+                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="card mb-3" id="thirdPointContainer" style={{maxWidth: "540px"}}>
+            <div className="card pointCard mb-3" id="thirdPointContainer" style={{maxWidth: "540px"}}>
               <div className="row g-0">
                 <div className="col-md-4 pointImgContainer">
                   <img src="./3-circle.svg" className="img-fluid rounded-start" alt="..." />
                 </div>
                 <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title text-light">Third Point</h5>
-                    <p className="card-text text-light">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div className="card-body pointCardBodyItem">
+                    <h5 className="card-title">Third Point</h5>
+                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   </div>
                 </div>
               </div>
@@ -158,12 +171,12 @@ export const App = () => {
         {/* Projects */}
         <div id="projectContainer">
 
-          <h1>Projects</h1>
+          <h1 id="projectsHeader">Projects</h1>
 
         <div id="projectCardContainer">
           <div className="card projectCard" style={{width: "18rem"}}>
             <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
-            <div className="card-body">
+            <div className="card-body projectCardItem">
               <h5 className="card-title">React-Flask</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
@@ -171,7 +184,7 @@ export const App = () => {
           </div>
           <div className="card projectCard" style={{width: "18rem"}}>
             <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
-            <div className="card-body">
+            <div className="card-body projectCardItem">
               <h5 className="card-title">Comic Book Library</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
@@ -179,7 +192,7 @@ export const App = () => {
           </div>
           <div className="card projectCard" style={{width: "18rem"}}>
             <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
-            <div className="card-body">
+            <div className="card-body projectCardItem">
               <h5 className="card-title">Poke API</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>

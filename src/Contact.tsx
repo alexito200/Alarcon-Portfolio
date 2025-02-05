@@ -1,11 +1,22 @@
 import './Contact.css';
 import { Toggle } from "./context/ThemeToggle";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
 export const Contact = () => {
-    const [isDark, setIsDark] = useState(true);
+    const savedTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : true;
+    const [isDark, setIsDark] = useState(savedTheme);
+
+    useEffect(() => {
+    if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+    }, [isDark]);
 
     return (
         <>
@@ -18,7 +29,6 @@ export const Contact = () => {
             </Link>
             <div className="ms-auto navbar-nav">
                 <a className="nav-item nav-link" id="themeButton" href="#">
-                    {/* <Classic style={{color: "white"}} duration={750} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} /> */}
                 <Toggle
                 isChecked={isDark}
                 handleChange={() => setIsDark(!isDark)}
