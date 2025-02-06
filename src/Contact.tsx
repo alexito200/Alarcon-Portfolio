@@ -20,21 +20,37 @@ export const Contact = () => {
 
     return (
         <>
-        
+
         <div id="totalContainer" data-theme={isDark ? "dark" : "light"}>
-            <Link to="/">
-                <Button className="btn">
-                    Back home
-                </Button>
-            </Link>
-            <div className="ms-auto navbar-nav">
-                <a className="nav-item nav-link" id="themeButton" href="#">
-                <Toggle
-                isChecked={isDark}
-                handleChange={() => setIsDark(!isDark)}
-                />
-                </a>
+            <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid d-flex justify-content-between align-items-center w-100" >
+                <Link to="/">
+                    <Button className="btn">
+                        Back
+                    </Button>
+                </Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"  aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="d-flex justify-content-center flex-grow-1">
+                        <div className="barNav navbar-nav" id="navButtons">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className="navbar-nav ms-auto">
+                    <a className="nav-item nav-link" id="themeButton" href="#">
+                        <Toggle
+                        isChecked={isDark}
+                        handleChange={() => setIsDark(!isDark)}
+                        />
+                    </a>
+                </div>
+
             </div>
+        </nav>
             <div id="totalFormContainer">
                 <form id="formContainer" className="d-flex flex-column justify-content-between">
                     <div id="titleContainer" className="text-white text-center">

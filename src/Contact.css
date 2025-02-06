@@ -2,10 +2,13 @@
     height: 100vh;
 }
 #formContainer {
-    background-color: #14213D;
+    background-color: #838383;
     width: 600px;
     height: 600px;
     padding: 2em;
     border-radius: 10px;
     margin: auto;
+}
+#titleContainer h1 {
+    color: white;
 }

@@ -25,34 +25,43 @@ export const App = () => {
 
     <>
       <div id='container' data-theme={isDark ? "dark" : "light"}>
+        
         {/* Navbar */}
-        <nav className="navbar navbar-expand-lg mx-2">
+        <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid d-flex justify-content-between align-items-center w-100">
           <a className="navbar-brand" href="/">Alarcon</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"  aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="barNav navbar-nav mx-auto" id="navButtons">
+          <div className="d-flex justify-content-center flex-grow-1">
+            <div className="barNav navbar-nav" id="navButtons">
               <a className="nav-item nav-link" href="#aboutContainer">About</a>
               <a className="nav-item nav-link" href="#xpContainer">Experience</a>
               <a className="nav-item nav-link" href="#projectContainer">Projects</a>
               <Link className="nav-item nav-link" to="/contact">Contact</Link>
             </div>
-            <div className="ms-auto navbar-nav">
-              <a className="nav-item nav-link" id="themeButton"href="#">
+
+
+          </div>
+          </div>
+
+            <div className="navbar-nav ms-auto">
+              <a className="nav-item nav-link" id="themeButton" href="#">
               <Toggle
                 isChecked={isDark}
                 handleChange={() => setIsDark(!isDark)}
               />
               </a>
             </div>
+
           </div>
         </nav>
 
         {/* Hero Section */}
         <div id="heroContainer">
           <div>
-            <img id="personImage" src="./person.jpg" alt="..." />
+            <img id="personImage" src="./profile-picture.jpeg" alt="..." />
           </div>
           <div id="heroTextContainer">
             <div id="typewriterContainer">
@@ -175,7 +184,7 @@ export const App = () => {
 
         <div id="projectCardContainer">
           <div className="card projectCard" style={{width: "18rem"}}>
-            <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
+            <img src="./react-flask.jpeg" className="card-img-top" alt="..." />
             <div className="card-body projectCardItem">
               <h5 className="card-title">React-Flask</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -183,15 +192,15 @@ export const App = () => {
             </div>
           </div>
           <div className="card projectCard" style={{width: "18rem"}}>
-            <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
+            <img src="./comic-library.jpeg" className="card-img-top" alt="..." />
             <div className="card-body projectCardItem">
-              <h5 className="card-title">Comic Book Library</h5>
+              <h5 className="card-title">Marvel API</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
             </div>
           </div>
           <div className="card projectCard" style={{width: "18rem"}}>
-            <img src="./desert-sky.jpg" className="card-img-top" alt="..." />
+            <img src="./poke-api.jpeg" className="card-img-top" alt="..." />
             <div className="card-body projectCardItem">
               <h5 className="card-title">Poke API</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
