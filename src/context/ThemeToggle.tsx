@@ -1,4 +1,4 @@
-import "../ThemeToggle.css";
+// import "../ThemeToggle.css";
 import { Classic } from "@theme-toggles/react";
 
 interface ToggleProps {
@@ -12,7 +12,7 @@ export const Toggle: React.FC<ToggleProps> = ({ handleChange, isChecked }) => {
             <Classic
                 toggled={isChecked}
                 toggle={handleChange}
-                style={{ color: "white" }}
+                style={{ color: isChecked ? "#e6e6e6" : "#333333" }}
                 duration={750}
             />
         </div>
