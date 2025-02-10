@@ -23,7 +23,7 @@
 [data-theme="light"] #titleContainer h1 {
     color: var(--primary-text-color);
 }
-#formContainer {
+.formContainer {
     background-color: #2A2A2A;
     width: 100%;
     max-width: 600px;
@@ -44,4 +44,8 @@
     border: var(--foreground-color);
     color: var(--primary-text-color);
 }
-
+.messageContainer textarea {
+        max-height: 150px;
+        resize: none; 
+        overflow-y: auto;
+}
