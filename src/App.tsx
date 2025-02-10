@@ -28,33 +28,36 @@ export const App = () => {
         
         {/* --------------------------------------------------- Navbar Section --------------------------------------------------- */}
         <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid d-flex justify-content-between align-items-center w-100">
-          <a className="navbar-brand" href="/">Alarcon</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"  aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="d-flex justify-content-center flex-grow-1">
-              <div className="barNav navbar-nav" id="navButtons">
-                <a className="nav-item nav-link" href="#aboutContainer">About</a>
-                <a className="nav-item nav-link" href="#xpContainer">Experience</a>
-                <a className="nav-item nav-link" href="#projectContainer">Projects</a>
-                <Link className="nav-item nav-link" to="/contact">Contact</Link>
-              </div>
-            </div>
-          </div>
+  <div className="container-fluid d-flex justify-content-between align-items-center w-100">
+    <a className="navbar-brand" href="/">Alarcon</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"  aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
 
-          <div className="navbar-nav ms-auto">
-            <a className="nav-item nav-link" id="themeButton" href="#">
-            <Toggle
-              isChecked={isDark}
-              handleChange={() => setIsDark(!isDark)}
-            />
-            </a>
-          </div>
-
+    <div className="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNavAltMarkup">
+      {/* Centered navigation links */}
+      <div className="d-flex justify-content-center flex-grow-1">
+        <div className="barNav navbar-nav" id="navButtons">
+          <a className="nav-item nav-link" href="#aboutContainer">About</a>
+          <a className="nav-item nav-link" href="#experience">Experience</a>
+          <a className="nav-item nav-link" href="#projectContainer">Projects</a>
+          <Link className="nav-item nav-link" to="/contact">Contact</Link>
         </div>
-        </nav>
+      </div>
+
+      {/* Theme Button (Inside the Collapse when Small) */}
+      <div className="navbar-nav ms-lg-auto mt-2 mt-lg-0">
+        <a className="nav-item nav-link" id="themeButton" href="#">
+          <Toggle
+            isChecked={isDark}
+            handleChange={() => setIsDark(!isDark)}
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
 
         {/* --------------------------------------------------- Hero Section --------------------------------------------------- */}
         <div id="heroContainer" className="d-flex flex-column flex-lg-row justify-content-center align-items-center">
@@ -65,13 +68,13 @@ export const App = () => {
             <div id="typewriterContainer">
               <h1>
               I&apos;m{" "}
-              <ReactTyped strings={["Alex Alarcon"]} typeSpeed={100} loop />
+              <ReactTyped strings={["Alex Alarcon"]} typeSpeed={110} loop />
               </h1>
               <p>Full Stack Developer | Passionate about Web Technologies</p>
             </div>
             <div id="typewriterContainer2">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut iure dignissimos alias temporibus est aliquid eaque. Consequuntur, facilis in!
+              I am a Fullstack Developer with expertise in building comprehensive web applications, encompassing both front-end and back-end development. I am a recent graduate of Coding Temple.
               </p>
             </div>
             <Link to="/contact" className="link-button">
@@ -241,44 +244,56 @@ export const App = () => {
 
         {/* --------------------------------------------------- Projects Section --------------------------------------------------- */}
         <div id="projectContainer" className="container py-5">
-          <h1 id="projectsHeader" className="text-center mb-5">Projects</h1>
+  <h1 id="projectsHeader" className="text-center mb-5">Projects</h1>
 
-          <div id="projectCardContainer" className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-            <div className="col">
-              <div className="card projectCard">
-                <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
-                <div className="card-body projectCardItem">
-                  <h5 className="card-title">React-Flask</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card projectCard">
-                <img src="./comic-library.jpeg" className="card-img-top" alt="Marvel API" />
-                <div className="card-body projectCardItem">
-                  <h5 className="card-title">Marvel API</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-              <div className="card projectCard">
-                <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
-                <div className="card-body projectCardItem">
-                  <h5 className="card-title">Poke API</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer"><i className="bi bi-github gitIcon fs-3"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+  <div id="projectCardContainer" className="row g-4">
+    {/* First Card */}
+    <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex">
+      <div className="card projectCard d-flex flex-column w-100">
+        <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
+        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
+          <h5 className="card-title">React-Flask</h5>
+          <p className="card-text">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
+          <p className="card-text flex-grow-1">A fullstack project with a working backend and frontend. Utilizes MySQL as the database management system. Perform CRUD operations seamlessly.</p>
+          <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-github gitIcon fs-3"></i>
+          </a>
         </div>
+      </div>
+    </div>
+
+    {/* Second Card */}
+    <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
+      <div className="card projectCard d-flex flex-column w-100">
+        <img src="./comic-library.jpeg" className="card-img-top" alt="Marvel API" />
+        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
+          <h5 className="card-title">Marvel API</h5>
+          <p className="card-text">React, HTML, CSS</p>
+          <p className="card-text flex-grow-1">A library of Marvel characters is made possible with the use of Marvel API. The user gets to dive deeper into the lore of their favorite character with a simple search bar.</p>
+          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-github gitIcon fs-3"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Third Card (Push Down in Medium Screens) */}
+    <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
+      <div className="card projectCard d-flex flex-column w-100">
+        <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
+        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
+          <h5 className="card-title">Poke API</h5>
+          <p className="card-text">JavaScript, HTML, CSS</p>
+          <p className="card-text flex-grow-1">The user is met with a flying Lugia sprite and a search bar. By typing in the name or number of the original 151, the user is able to view all of the details for that awesome Pokemon.</p>
+          <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-github gitIcon fs-3"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </>
   )

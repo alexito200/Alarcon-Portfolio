@@ -20,6 +20,9 @@
 [data-theme="light"] #formContainer {
     background-color: var(--foreground-color);
 }
+[data-theme="light"] #form {
+    background-color: #F4F4F4;
+}
 [data-theme="light"] #titleContainer h1 {
     color: var(--primary-text-color);
 }
@@ -33,19 +36,123 @@
     margin: auto;
 }
 #titleContainer h1 {
-    color: white;
-}
-#submitContainer button {
-    background-color: #FCA311;
-    border: 2px solid #FCA311;
+    color: var(--primary-text-color);
 }
 .backButton {
     background-color: var(--foreground-color);
     border: var(--foreground-color);
     color: var(--primary-text-color);
+    border-radius: 10px;
 }
+.backButton,
+.backButton:after,
+.backButton:before {
+    transition: all 0.5s;
+}
+
+.backButton {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: var(--foreground-color);
+    border: var(--foreground-color);
+    color: var(--primary-text-color);
+    border-radius: 10px;
+}
+
+/* Background transition effect */
+.backButton:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: #FCA311;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.backButton:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+/* Border and shadow transition */
+.back-nav-item {
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 5px rgba(255, 0, 0, 0);
+}
+
+.back-nav-item:hover {
+    border-color: #FCA311;
+    box-shadow: 0px 0px 15px rgb(255, 171, 16);
+}
+
 .messageContainer textarea {
         max-height: 150px;
         resize: none; 
         overflow-y: auto;
 }
+.form-control:focus {
+    border-color: #FCA311 !important;  /* Change the border color */
+    box-shadow: 0px 0px 8px rgba(252, 163, 17, 0.8) !important; /* Customize box-shadow */
+    outline: none !important; /* Remove default outline */
+}
+#emailPasswordNameContainer input,
+#emailPasswordNameContainer textarea {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+#submitContainer button {
+    position: relative;
+    z-index: 2;
+    border: none;
+    font-size: 1.3rem;
+    padding: 12px 20px;
+    background-color: transparent; /* Ensure the button text stays above the pseudo-elements */
+}  
+.btn-two {
+    position: relative;
+    z-index: 2; /* Ensure the button text stays above the pseudo-elements */
+    color: white; /* Default text color */
+}
+
+.btn-two::before,
+.btn-two::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the pseudo-elements behind the text */
+    transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Initial border */
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1); /* Initial background */
+}
+
+.btn-two:hover::before,
+.btn-two:hover::after {
+    border: none; /* Remove border on hover */
+    background: linear-gradient(135deg, #FCA311, #FF3366); /* Gradient effect on hover */
+}
+
+.btn-two:hover::before {
+    transform: rotate(-45deg);
+}
+
+.btn-two:hover::after {
+    transform: rotate(45deg);
+}
+

@@ -59,7 +59,7 @@ export const Contact = () => {
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid d-flex justify-content-between align-items-center w-100">
                     <Link to="/">
-                        <Button className="btn backButton">Back</Button>
+                        <Button className="btn back-nav-item backButton">Back</Button>
                     </Link>
 
                     <div className="navbar-nav ms-auto">
@@ -94,7 +94,7 @@ export const Contact = () => {
                     </div>
 
                     <div id="submitContainer" className="text-center">
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-two btn-primary">Submit</button>
                     </div>
 
                     {formStatus && (
