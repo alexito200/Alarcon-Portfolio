@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Hind:wght@500&display=swap');
+
+
 [data-theme="dark"] {
     --background-color: #1F1F1F;
     --foreground-color: #222222;
@@ -5,6 +8,8 @@
     --secondary-text-color: #0a0a0a;
     --toggle-bg: #283452;
     --toggle-fg: #00a6ff;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Hind', sans-serif;
 }
 [data-theme="light"] {
     --background-color: #FFFFFF;
@@ -13,6 +18,8 @@
     --secondary-text-color: #ffffff;
     --toggle-bg: #f0eb9d;
     --toggle-fg: #ffd000;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Hind', sans-serif;
 }
 html[data-theme="dark"], body[data-theme="dark"] {
     background-color: var(--background-color);
@@ -29,7 +36,6 @@ html[data-theme="dark"], body[data-theme="dark"] {
 .xp,
 #xpHeader,
 #aboutHeader,
-/* .projectCardItem, */
 #projectsHeader,
 #typewriterContainer,
 #typewriterContainer2,
@@ -49,6 +55,34 @@ html[data-theme="dark"], body[data-theme="dark"] {
 html {
     scroll-behavior: smooth;
 }
+
+/* -------------------------------------------------------------------
+------------------------ Font Application ------------------------- */
+
+.navbar-brand,
+#typewriterContainer,
+#contactButton,
+#aboutHeader,
+#firstPointContainer h4,
+#secondPointContainer h4,
+#thirdPointContainer h4,
+#xpHeader,
+#projectsHeader,
+.card-title {
+    font-family: var(--font-primary);
+}
+#navButtons,
+#typewriterContainer2 p,
+#firstPointContainer p,
+#secondPointContainer p,
+#thirdPointContainer p,
+.icon-text-container span,
+.card-text {
+    font-family: var(--font-secondary);
+}
+
+/* ------------------------ Font Application -------------------------
+------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------------- Scrollbar -------------------------------------------------------------------- */
 
@@ -229,6 +263,9 @@ html {
     color: white;
     padding-left: 20px;
 }
+#typewriterContainer h1 {
+    font-size: 5.5rem;
+}
 #typewriterContainer2 {
     max-width: 800px;
 }
@@ -387,9 +424,10 @@ html {
     align-items: flex-start;
     padding: 0;
     margin: 0 auto;
+    max-width: 1400px;
     min-height: 100vh;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
     flex-wrap: wrap; /* Allow wrapping when screen gets smaller */
 }
 
@@ -402,6 +440,47 @@ html {
     margin: 0 auto;
     justify-content: center;
 }
+
+/* Style for each card */
+#cards > .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+#cards > .card:hover {
+    filter: grayscale(0%); /* Removes grayscale */
+    transform: scale(1.05); /* Slightly scale the card on hover */
+}
+
+/* Text color change when card is hovered */
+#cards > .card:hover .icon-text-container {
+    z-index: 2;
+}
+
+/* Pseudo-element for the sliding color */
+#cards > .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #F4F4F4; /* Initially dark overlay */
+    transition: left 0.3s ease-in-out;
+}
+
+/* When hovered, slide the color from left */
+#cards > .card:hover::before {
+    left: 0; /* Slide in the color */
+}
+
+
 
 /* Small screens: 2 columns */
 @media (max-width: 767px) {
@@ -442,12 +521,6 @@ html {
     border-radius: 8px;
 }
 
-/* 🖥️ Hover Effects */
-#cardsContainer #cards .card:hover {
-    background-color: white;
-    transform: scale(1.05);
-}
-
 /* 🏆 Icon + Text Styling */
 #cardsContainer #cards .icon-text-container {
     display: flex;
@@ -474,65 +547,6 @@ html {
     font-weight: bold;
 }
 
-
-
-
-/* @keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-#xpContainer {
-    margin-top: 18%;
-    margin-bottom: 18%;
-}
-.xp {
-    font-size: 3rem;
-    color: white;
-    text-align: center;
-}
-.logos {
-    overflow: hidden;
-    padding: 60px 0;
-    white-space: nowrap;
-    position: relative;
-}
-.tech-logo {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out;
-}
-
-.tech-logo:hover {
-    filter: grayscale(0%);
-}
-.logos:before,
-.logos:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-} 
-.logos:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(60, 61, 64));
-}
-.logos:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(100, 102, 107));
-}
-.logos-slide {
-    display: inline-block;
-    animation: 40s slide infinite linear;
-}
-.logos-slide img {
-    height: 120px;
-    margin: 0 40px;
-} */
 /* ------------------------------------------------------------------- Projects -------------------------------------------------------------------- */
 #projectContainer {
     margin-bottom: 15%;
@@ -554,20 +568,44 @@ html {
 .projectCard .card-body {
     background-color: #2A2A2A;
     color: #F4F4F4;
+    height: 350px;
+    border-radius: 6px;
 }
-.projectCard {
-    position: relative;
-    border: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0px 0px 5px rgba(255, 0, 0, 0);
+#projectCardContainer .projectCard {
+    position: relative; /* Make sure the card is positioned relative */
+    background-color: #2A2A2A; /* Your card background */
+    border-radius: 4px; /* Apply rounded corners to the card */
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
 }
-.projectCard:hover {
-    border-color: #FCA311;
-    box-shadow: 0px 0px 15px rgb(255, 171, 16);
+
+#projectCardContainer .projectCard::before {
+    content: '';
+    position: absolute;
+    top: -4px; /* Adjust based on border thickness */
+    left: -4px; /* Adjust based on border thickness */
+    right: -4px; /* Adjust based on border thickness */
+    bottom: -4px; /* Adjust based on border thickness */
+    background: linear-gradient(45deg, #ff6f61, #FCA311); /* Gradient color */
+    border-radius: 4px; /* Apply the same border radius to the pseudo-element */
+    z-index: -1; /* Make sure the pseudo-element is behind the card content */
+    transition: all 0.3s ease-in-out;
+}
+
+#projectCardContainer .projectCard:hover::before {
+    background: linear-gradient(45deg, #FCA311, #ff6f61); /* Gradient change on hover */
+}
+
+.techStack {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent;
 }
 /* create a hover animation for the icons */
 .gitIcon {
     color: #FCA311;
+    transition: all 0.3s ease-in-out;
 }
 .gitIcon:hover {
     color: white;

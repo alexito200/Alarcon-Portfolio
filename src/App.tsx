@@ -38,16 +38,16 @@ export const App = () => {
       {/* Centered navigation links */}
       <div className="d-flex justify-content-center flex-grow-1">
         <div className="barNav navbar-nav" id="navButtons">
-          <a className="nav-item nav-link" href="#aboutContainer">About</a>
-          <a className="nav-item nav-link" href="#experience">Experience</a>
-          <a className="nav-item nav-link" href="#projectContainer">Projects</a>
-          <Link className="nav-item nav-link" to="/contact">Contact</Link>
+          <a className="nav-item nav-link py-2 px-2" href="#aboutContainer">About</a>
+          <a className="nav-item nav-link py-2 px-2" href="#experience">Experience</a>
+          <a className="nav-item nav-link py-2 px-2" href="#projectContainer">Projects</a>
+          <Link className="nav-item nav-link py-2 px-2" to="/contact">Contact</Link>
         </div>
       </div>
 
       {/* Theme Button (Inside the Collapse when Small) */}
       <div className="navbar-nav ms-lg-auto mt-2 mt-lg-0">
-        <a className="nav-item nav-link" id="themeButton" href="#">
+        <a className="nav-item nav-link px-4 py-4" id="themeButton" href="#">
           <Toggle
             isChecked={isDark}
             handleChange={() => setIsDark(!isDark)}
@@ -60,7 +60,7 @@ export const App = () => {
 
 
         {/* --------------------------------------------------- Hero Section --------------------------------------------------- */}
-        <div id="heroContainer" className="d-flex flex-column flex-lg-row justify-content-center align-items-center">
+        <div id="heroContainer" className="d-flex flex-column flex-lg-row justify-content-center align-items-center mx-md-5">
           <div>
             <img id="personImage" src="./profile-picture.jpeg" alt="Profile" className="img-fluid" />
           </div>
@@ -122,44 +122,6 @@ export const App = () => {
         </div>
 
         {/* --------------------------------------------------- Experience Section --------------------------------------------------- */}
-        {/* <div id="xpContainer" className="container py-5">
-          <h1 className="text-center">Experience</h1>
-          <div className="logos">
-            <div className="logos-slide">
-              <img src="./html.png" alt="HTML" className="tech-logo" />
-              <img src="./css.png" alt="CSS" className="tech-logo"/>
-              <img src="./figma.png" alt="Figma" className="tech-logo"/>
-              <img src="./js.png" alt="JavaScript" className="tech-logo"/>
-              <img src="./bootstrap.png" alt="Bootstrap" className="tech-logo"/>
-              <img src="./python.png" alt="Python" className="tech-logo"/>
-              <img src="./mysql.png" alt="MySQL" className="tech-logo"/>
-              <img src="./react.png" alt="React" className="tech-logo"/>
-              <img src="./flask.png" alt="Flask" className="tech-logo"/>
-            </div>
-            <div className="logos-slide d-flex justify-content-center">
-              <img src="./html.png" alt="HTML" className="tech-logo" />
-              <img src="./css.png" alt="CSS" className="tech-logo"/>
-              <img src="./figma.png" alt="Figma" className="tech-logo"/>
-              <img src="./js.png" alt="JavaScript" className="tech-logo"/>
-              <img src="./bootstrap.png" alt="Bootstrap" className="tech-logo"/>
-              <img src="./python.png" alt="Python" className="tech-logo"/>
-              <img src="./mysql.png" alt="MySQL" className="tech-logo"/>
-              <img src="./react.png" alt="React" className="tech-logo"/>
-              <img src="./flask.png" alt="Flask" className="tech-logo"/>
-            </div>
-            <div className="logos-slide d-flex justify-content-center">
-              <img src="./html.png" alt="HTML" className="tech-logo" />
-              <img src="./css.png" alt="CSS" className="tech-logo"/>
-              <img src="./figma.png" alt="Figma" className="tech-logo"/>
-              <img src="./js.png" alt="JavaScript" className="tech-logo"/>
-              <img src="./bootstrap.png" alt="Bootstrap" className="tech-logo"/>
-              <img src="./python.png" alt="Python" className="tech-logo"/>
-              <img src="./mysql.png" alt="MySQL" className="tech-logo"/>
-              <img src="./react.png" alt="React" className="tech-logo"/>
-              <img src="./flask.png" alt="Flask" className="tech-logo"/>
-            </div>
-          </div>
-        </div> */}
 <section id="experience">
   <h1 id="xpHeader"className="mb-5">Experience</h1>
   <div id="cardsContainer">
@@ -248,12 +210,12 @@ export const App = () => {
 
   <div id="projectCardContainer" className="row g-4">
     {/* First Card */}
-    <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex">
+    <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
       <div className="card projectCard d-flex flex-column w-100">
         <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">React-Flask</h5>
-          <p className="card-text">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
+          <p className="card-text techStack">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
           <p className="card-text flex-grow-1">A fullstack project with a working backend and frontend. Utilizes MySQL as the database management system. Perform CRUD operations seamlessly.</p>
           <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-github gitIcon fs-3"></i>
@@ -268,7 +230,7 @@ export const App = () => {
         <img src="./comic-library.jpeg" className="card-img-top" alt="Marvel API" />
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">Marvel API</h5>
-          <p className="card-text">React, HTML, CSS</p>
+          <p className="card-text techStack">React, HTML, CSS</p>
           <p className="card-text flex-grow-1">A library of Marvel characters is made possible with the use of Marvel API. The user gets to dive deeper into the lore of their favorite character with a simple search bar.</p>
           <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-github gitIcon fs-3"></i>
@@ -283,7 +245,7 @@ export const App = () => {
         <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">Poke API</h5>
-          <p className="card-text">JavaScript, HTML, CSS</p>
+          <p className="card-text techStack">JavaScript, HTML, CSS</p>
           <p className="card-text flex-grow-1">The user is met with a flying Lugia sprite and a search bar. By typing in the name or number of the original 151, the user is able to view all of the details for that awesome Pokemon.</p>
           <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-github gitIcon fs-3"></i>

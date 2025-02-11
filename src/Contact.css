@@ -5,6 +5,8 @@
     --secondary-text-color: #0a0a0a;
     --toggle-bg: #283452;
     --toggle-fg: #00a6ff;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Hind', sans-serif;
 }
 [data-theme="light"] {
     --background-color: #FFFFFF;
@@ -13,7 +15,27 @@
     --secondary-text-color: #ffffff;
     --toggle-bg: #f0eb9d;
     --toggle-fg: #ffd000;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Hind', sans-serif;
 }
+
+/* -------------------------------------------------------------------
+------------------------ Font Application ------------------------- */
+
+.backButton,
+#titleContainer h1 {
+    font-family: var(--font-primary);
+}
+.nameContainer input,
+.emailContainer input,
+.messageContainer textarea,
+#submitContainer button {
+    font-family: var(--font-secondary);
+}
+
+/* ------------------------ Font Application -------------------------
+------------------------------------------------------------------- */
+
 #totalContainer {
     height: 100vh;
 }
@@ -118,6 +140,7 @@
     z-index: 2;
     border: none;
     font-size: 1.3rem;
+    color: var(--primary-text-color);
     padding: 12px 20px;
     background-color: transparent; /* Ensure the button text stays above the pseudo-elements */
 }  
@@ -155,4 +178,3 @@
 .btn-two:hover::after {
     transform: rotate(45deg);
 }
-
