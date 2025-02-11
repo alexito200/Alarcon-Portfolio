@@ -250,9 +250,6 @@ html {
 #heroContainer h1{
     font-size: 6rem;
 }
-#heroContainer p{
-    font-size: 1.5rem;
-}
 #personImage {
     border-radius: 50%;
     width: 450px;
@@ -265,13 +262,58 @@ html {
 }
 #typewriterContainer h1 {
     font-size: 5.5rem;
+    transition: font-size 0.3s ease;
+}
+#typewriterContainer p {
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease;
 }
 #typewriterContainer2 {
     max-width: 800px;
 }
 #typewriterContainer2 p {
     font-size: 1.2em;
+    transition: font-size 0.3s ease;
 }
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    #typewriterContainer h1 {
+      font-size: 3rem; /* Shrink header font size */
+    margin-top: 1.1em;
+    }
+    #typewriterContainer p {
+      font-size: 1.2rem; /* Adjust paragraph font size */
+    }
+    #typewriterContainer2 p {
+      font-size: 1rem; /* Adjust second paragraph font size */
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 768px) {
+    #typewriterContainer h1 {
+      font-size: 2.5rem; /* Shrink header font size more */
+    }
+    #typewriterContainer p {
+      font-size: 1rem; /* Adjust paragraph font size */
+    }
+    #typewriterContainer2 p {
+      font-size: 0.9rem; /* Adjust second paragraph font size */
+    }
+  }
+  
+  /* Extra small screens (portrait phones) */
+  @media (max-width: 480px) {
+    #typewriterContainer h1 {
+      font-size: 2rem; /* Further shrink header font size */
+    }
+    #typewriterContainer p {
+      font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+    #typewriterContainer2 p {
+      font-size: 0.8rem; /* Adjust second paragraph font size */
+    }
+  }
 .link-button > #contactButton {
     font-size: 1.1em;
 }
@@ -425,7 +467,8 @@ html {
     padding: 0;
     margin: 0 auto;
     max-width: 1400px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    margin-bottom: 200px;
     overflow: hidden;
     width: 90%;
     flex-wrap: wrap; /* Allow wrapping when screen gets smaller */

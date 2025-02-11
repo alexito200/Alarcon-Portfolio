@@ -205,7 +205,7 @@ export const App = () => {
 
 
         {/* --------------------------------------------------- Projects Section --------------------------------------------------- */}
-        <div id="projectContainer" className="container py-5">
+        <div id="projectContainer" className="container ">
   <h1 id="projectsHeader" className="text-center mb-5">Projects</h1>
 
   <div id="projectCardContainer" className="row g-4">
