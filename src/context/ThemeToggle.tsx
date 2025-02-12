@@ -1,4 +1,3 @@
-// import "../ThemeToggle.css";
 import { Classic } from "@theme-toggles/react";
 
 interface ToggleProps {

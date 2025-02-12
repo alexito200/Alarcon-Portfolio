@@ -43,14 +43,14 @@ html[data-theme="dark"], body[data-theme="dark"] {
     color: var(--primary-text-color) !important;
 }
 ::selection {
-    background-color: #FCA311; /* Highlight background color */
-    color: #0a0a0a; /* Highlighted text color */
+    background-color: #FCA311;
+    color: #0a0a0a;
 }
 #container {
-    min-height: 100vh; /* Ensures it stretches to at least full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: inherit; /* Inherits from body */
+    background-color: inherit;
 }
 html {
     scroll-behavior: smooth;
@@ -86,21 +86,15 @@ html {
 
 /* ------------------------------------------------------------------- Scrollbar -------------------------------------------------------------------- */
 
-/* Width of the scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
 }
-/* ::-webkit-scrollbar-track {
-    background-color: #1C1C1C;
-} */
 [data-theme="dark"]::-webkit-scrollbar-track {
     background-color: #1C1C1C;
 }
-/* Handle (the draggable part) */
 ::-webkit-scrollbar-thumb {
     background: #FCA311;
 }
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--toggle-fg);
 }
@@ -129,13 +123,12 @@ html {
     text-align: center;
 }
 .navbar-toggler-icon {
-    filter: invert(100%); /* Makes it white */
+    filter: invert(100%);
 }
 
-/* Change the color when collapsed */
 .navbar-toggler:focus, 
 .navbar-toggler:hover {
-    filter: invert(50%); /* Example: Slightly dim the color */
+    filter: invert(50%);
 }
 
 #themeButton {
@@ -196,9 +189,9 @@ html {
     color: #000000;
 }
 #themeButton {
-    min-width: 50px; /* Adjust based on the actual size */
-    height: 40px; /* Maintain height */
-    flex-shrink: 0; /* Prevent shrinking inside flex containers */
+    min-width: 50px;
+    height: 40px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,7 +207,6 @@ html {
     width: 100%;
     height: 100%;
     content: '';
-    /* color: transparent; */
     background: #FCA311;
     border-radius: 10px;
     visibility: hidden;
@@ -226,7 +218,7 @@ html {
     visibility: visible;
     height: 100%;
 }
-@media (max-width: 992px) {  /* Adjust for medium screens and below */
+@media (max-width: 992px) {
     .navbar-collapse {
         display: flex;
         flex-direction: column;
@@ -234,7 +226,7 @@ html {
     }
 
     #themeButton {
-        margin-top: 10px; /* Add spacing when inside collapsed menu */
+        margin-top: 10px;
         width: auto;
     }
 }
@@ -275,45 +267,41 @@ html {
     font-size: 1.2em;
     transition: font-size 0.3s ease;
 }
-/* Medium screens (tablets) */
 @media (max-width: 1024px) {
     #typewriterContainer h1 {
-      font-size: 3rem; /* Shrink header font size */
+    font-size: 3rem;
     margin-top: 1.1em;
     }
     #typewriterContainer p {
-      font-size: 1.2rem; /* Adjust paragraph font size */
+        font-size: 1.2rem;
     }
     #typewriterContainer2 p {
-      font-size: 1rem; /* Adjust second paragraph font size */
+    font-size: 1rem;
     }
-  }
-  
-  /* Small screens (phones) */
-  @media (max-width: 768px) {
+}  
+@media (max-width: 768px) {
     #typewriterContainer h1 {
-      font-size: 2.5rem; /* Shrink header font size more */
+    font-size: 2.5rem;
     }
     #typewriterContainer p {
-      font-size: 1rem; /* Adjust paragraph font size */
+    font-size: 1rem;
     }
     #typewriterContainer2 p {
-      font-size: 0.9rem; /* Adjust second paragraph font size */
+    font-size: 0.9rem;
     }
-  }
-  
-  /* Extra small screens (portrait phones) */
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     #typewriterContainer h1 {
-      font-size: 2rem; /* Further shrink header font size */
+    font-size: 2rem;
     }
     #typewriterContainer p {
-      font-size: 0.9rem; /* Adjust paragraph font size */
+    font-size: 0.9rem;
     }
     #typewriterContainer2 p {
-      font-size: 0.8rem; /* Adjust second paragraph font size */
+    font-size: 0.8rem;
     }
-  }
+}
 .link-button > #contactButton {
     font-size: 1.1em;
 }
@@ -326,36 +314,32 @@ html {
     padding: 10px 12px;
     position: relative;
     overflow: hidden;
-    transition: all 0.5s ease-in-out; /* Apply linear timing function */
+    transition: all 0.5s ease-in-out;
 }
 
-/* Hover: Move text slightly left and show an arrow */
 #contactButton:hover {
-    background: linear-gradient(135deg, #764BA2, #667EEA); /* Gradient background */
+    background: linear-gradient(135deg, #764BA2, #667EEA);
     transform: translateX(-5px) scale(1.05);
     padding-right: 50px;
 }
 
-/* Add an arrow on hover, positioned absolutely to avoid space in button */
 #contactButton::after {
-    content: " →"; /* Unicode right arrow */
+    content: " →";
     position: absolute;
-    right: 0px; /* Position the arrow on the right */
+    right: 0px;
     top: 50%;
-    transform: translateY(-50%) translateX(-20px); /* Center vertically and off to the left initially */
+    transform: translateY(-50%) translateX(-20px);
     opacity: 0;
-    transition: all 0.4s linear; /* Apply linear timing function */
+    transition: all 0.4s linear;
 }
 
-/* Show arrow and shift text on hover */
 #contactButton:hover::after {
     opacity: 1;
-    transform: translateY(-50%) translateX(-20px); /* Move the arrow to the right */
+    transform: translateY(-50%) translateX(-20px);
 }
 
 /* ------------------------------------------------------------------- About -------------------------------------------------------------------- */
 #aboutContainer {
-    /* background-color: #343a40; */
     color: white;
     width: 80%;
     max-width: 1200px;
@@ -420,13 +404,12 @@ html {
 #firstPointContainer:hover,
 #secondPointContainer:hover,
 #thirdPointContainer:hover {
-    /* change the color and add hover animation(reference notion notes, there's a hover effect tip in HTML/CSS page) */
     background-color: #FCA311;
 }
 .custom-card {
-    background-color: #14213D; /* Navy blue */
-    color: white; /* White text */
-    border-radius: 15px; /* Rounded corners */
+    background-color: #14213D;
+    color: white;
+    border-radius: 15px;
     padding: 20px;
     text-align: center;
 }
@@ -436,7 +419,7 @@ html {
     align-items: center;
 }
 .custom-card i {
-    font-size: 40px; /* Bootstrap icon size */
+    font-size: 40px;
     margin-bottom: 10px;
 }
 .pointCard {
@@ -467,16 +450,15 @@ html {
     padding: 0;
     margin: 0 auto;
     max-width: 1400px;
-    /* min-height: 100vh; */
     margin-bottom: 200px;
     overflow: hidden;
     width: 90%;
-    flex-wrap: wrap; /* Allow wrapping when screen gets smaller */
+    flex-wrap: wrap;
 }
 
 #cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Use minmax for flexibility */
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
     gap: 16px;
     max-width: 1320px;
     width: 100%;
@@ -484,7 +466,6 @@ html {
     justify-content: center;
 }
 
-/* Style for each card */
 #cards > .card {
     position: relative;
     width: 100%;
@@ -495,18 +476,15 @@ html {
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Hover effect */
 #cards > .card:hover {
-    filter: grayscale(0%); /* Removes grayscale */
-    transform: scale(1.05); /* Slightly scale the card on hover */
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
-/* Text color change when card is hovered */
 #cards > .card:hover .icon-text-container {
     z-index: 2;
 }
 
-/* Pseudo-element for the sliding color */
 #cards > .card::before {
     content: '';
     position: absolute;
@@ -514,26 +492,23 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: #F4F4F4; /* Initially dark overlay */
+    background-color: #F4F4F4;
     transition: left 0.3s ease-in-out;
 }
 
-/* When hovered, slide the color from left */
 #cards > .card:hover::before {
-    left: 0; /* Slide in the color */
+    left: 0;
 }
 
 
 
-/* Small screens: 2 columns */
 @media (max-width: 767px) {
     #cards {
-        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Ensures columns shrink */
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
         grid-template-rows: repeat(6, auto);
     }
 }
 
-/* Medium screens: 3 columns */
 @media (min-width: 768px) and (max-width: 991px) {
     #cards {
         grid-template-columns: repeat(3, minmax(180px, 1fr));
@@ -541,7 +516,6 @@ html {
     }
 }
 
-/* Large screens: 4 columns */
 @media (min-width: 992px) {
     #cards {
         grid-template-columns: repeat(4, minmax(200px, 1fr));
@@ -549,13 +523,12 @@ html {
     }
 }
 
-/* ✅ Make Cards Responsive */
 #cardsContainer #cards .card {
     background-color: #919191;
-    height: auto; /* Allow height to adjust dynamically */
-    width: 100%; /* Ensures it scales within grid */
+    height: auto;
+    width: 100%;
     min-width: 150px;
-    aspect-ratio: 16/9; /* Keeps cards proportional */
+    aspect-ratio: 16/9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -564,7 +537,6 @@ html {
     border-radius: 8px;
 }
 
-/* 🏆 Icon + Text Styling */
 #cardsContainer #cards .icon-text-container {
     display: flex;
     align-items: center;
@@ -578,15 +550,13 @@ html {
     transition: filter 0.3s ease;
 }
 
-/* 🖱️ Remove Grayscale on Hover */
 #cardsContainer #cards .card:hover .tech-logo {
     filter: grayscale(0%);
 }
 
-/* 📌 Font Style */
 #cardsContainer #cards .card span {
     color: #333;
-    font-size: clamp(16px, 2vw, 24px); /* Makes text responsive */
+    font-size: clamp(16px, 2vw, 24px);
     font-weight: bold;
 }
 
@@ -615,9 +585,9 @@ html {
     border-radius: 6px;
 }
 #projectCardContainer .projectCard {
-    position: relative; /* Make sure the card is positioned relative */
-    background-color: #2A2A2A; /* Your card background */
-    border-radius: 4px; /* Apply rounded corners to the card */
+    position: relative;
+    background-color: #2A2A2A;
+    border-radius: 4px;
     transition: all 0.3s ease-in-out;
     z-index: 2;
 }
@@ -625,27 +595,26 @@ html {
 #projectCardContainer .projectCard::before {
     content: '';
     position: absolute;
-    top: -4px; /* Adjust based on border thickness */
-    left: -4px; /* Adjust based on border thickness */
-    right: -4px; /* Adjust based on border thickness */
-    bottom: -4px; /* Adjust based on border thickness */
-    background: linear-gradient(45deg, #ff6f61, #FCA311); /* Gradient color */
-    border-radius: 4px; /* Apply the same border radius to the pseudo-element */
-    z-index: -1; /* Make sure the pseudo-element is behind the card content */
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #ff6f61, #FCA311);
+    border-radius: 4px;
+    z-index: -1;
     transition: all 0.3s ease-in-out;
 }
 
 #projectCardContainer .projectCard:hover::before {
-    background: linear-gradient(45deg, #FCA311, #ff6f61); /* Gradient change on hover */
+    background: linear-gradient(45deg, #FCA311, #ff6f61);
 }
 
 .techStack {
     background: linear-gradient(90deg, #ff6f61, #FCA311);
     background-clip: text;
-    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-/* create a hover animation for the icons */
 .gitIcon {
     color: #FCA311;
     transition: all 0.3s ease-in-out;

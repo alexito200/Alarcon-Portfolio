@@ -35,7 +35,6 @@ export const App = () => {
     </button>
 
     <div className="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNavAltMarkup">
-      {/* Centered navigation links */}
       <div className="d-flex justify-content-center flex-grow-1">
         <div className="barNav navbar-nav" id="navButtons">
           <a className="nav-item nav-link py-2 px-2" href="#aboutContainer">About</a>
@@ -45,7 +44,6 @@ export const App = () => {
         </div>
       </div>
 
-      {/* Theme Button (Inside the Collapse when Small) */}
       <div className="navbar-nav ms-lg-auto mt-2 mt-lg-0">
         <a className="nav-item nav-link px-4 py-4" id="themeButton" href="#">
           <Toggle
@@ -209,7 +207,6 @@ export const App = () => {
   <h1 id="projectsHeader" className="text-center mb-5">Projects</h1>
 
   <div id="projectCardContainer" className="row g-4">
-    {/* First Card */}
     <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
       <div className="card projectCard d-flex flex-column w-100">
         <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
@@ -224,7 +221,6 @@ export const App = () => {
       </div>
     </div>
 
-    {/* Second Card */}
     <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
       <div className="card projectCard d-flex flex-column w-100">
         <img src="./comic-library.jpeg" className="card-img-top" alt="Marvel API" />
@@ -239,7 +235,6 @@ export const App = () => {
       </div>
     </div>
 
-    {/* Third Card (Push Down in Medium Screens) */}
     <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
       <div className="card projectCard d-flex flex-column w-100">
         <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
