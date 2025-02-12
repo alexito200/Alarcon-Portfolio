@@ -223,7 +223,7 @@ export const App = () => {
 
     <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
       <div className="card projectCard d-flex flex-column w-100">
-        <img src="./comic-library.jpeg" className="card-img-top" alt="Marvel API" />
+        <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">Marvel API</h5>
           <p className="card-text techStack">React, HTML, CSS</p>
