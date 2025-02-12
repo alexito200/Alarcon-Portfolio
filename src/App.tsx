@@ -48,7 +48,7 @@ export const App = () => {
         <a className="nav-item nav-link px-4 py-4" id="themeButton" href="#">
           <Toggle
             isChecked={isDark}
-            handleChange={() => setIsDark(!isDark)}
+            handleChange={setIsDark}
           />
         </a>
       </div>
