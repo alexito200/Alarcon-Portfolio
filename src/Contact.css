@@ -133,46 +133,37 @@
     font-size: 1rem;
     transition: border-color 0.3s ease-in-out;
 }
-#submitContainer button {
-    position: relative;
-    z-index: 2;
-    border: none;
-    font-size: 1.3rem;
-    color: var(--primary-text-color);
-    padding: 12px 20px;
-    background-color: transparent;
-}  
-.btn-two {
-    position: relative;
-    z-index: 2;
-    color: white;
+#submitContainer > #contactButton2 {
+    font-size: 1.3em;
 }
-
-.btn-two::before,
-.btn-two::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+#contactButton2 {
+    background-color: #FCA311;
+    border: none;
+    color: var(--primary-text-color); 
+    border-radius: 50px;
+    padding: 10px 22px;
+    position: relative;
+    overflow: hidden;
     transition: all 0.5s ease-in-out;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.btn-two:hover::before,
-.btn-two:hover::after {
-    border: none;
-    background: linear-gradient(135deg, #FCA311, #FF3366);
+#contactButton2:hover {
+    background: linear-gradient(135deg, #764BA2, #667EEA);
+    transform: translateX(-5px) scale(1.05);
+    padding-right: 50px;
 }
 
-.btn-two:hover::before {
-    transform: rotate(-45deg);
+#contactButton2::after {
+    content: " →";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    opacity: 0;
+    transition: all 0.4s linear;
 }
 
-.btn-two:hover::after {
-    transform: rotate(45deg);
+#contactButton2:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-20px);
 }

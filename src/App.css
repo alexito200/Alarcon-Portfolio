@@ -387,6 +387,23 @@ html {
 #thirdPointContainer {
     max-width: 540px;
     background-color: #2A2A2A;
+    padding: 80px 20px;
+}
+@media (max-width: 768px) {
+
+#firstPointContainer,
+#secondPointContainer,
+#thirdPointContainer {
+    padding: 40px 20px;
+}
+}
+@media (max-width: 425px) {
+
+#firstPointContainer,
+#secondPointContainer,
+#thirdPointContainer {
+    padding: 80px 20px;
+}
 }
 
 #firstPointContainer img,
@@ -618,6 +635,10 @@ html {
 .gitIcon {
     color: #FCA311;
     transition: all 0.3s ease-in-out;
+    font-size: 2em;
+    position: absolute;
+    bottom: 10px; /* Adjust the position from the bottom */
+    left: 10px;
 }
 .gitIcon:hover {
     color: white;

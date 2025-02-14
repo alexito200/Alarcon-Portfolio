@@ -94,7 +94,10 @@ export const Contact = () => {
                     </div>
 
                     <div id="submitContainer" className="text-center">
-                        <button type="submit" className="btn btn-two btn-primary">Submit</button>
+                        {/* <button type="submit" className="btn btn-two">Submit</button> */}
+                        <Button type="submit" className="btn btn-two" id="contactButton2">
+                            Submit
+                        </Button>
                     </div>
 
                     {formStatus && (

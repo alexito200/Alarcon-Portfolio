@@ -83,12 +83,62 @@ export const App = () => {
           </div>
         </div>
 
+        {/* --------------------------------------------------- Projects Section --------------------------------------------------- */}
+        <div id="projectContainer" className="container ">
+  <h1 id="projectsHeader" className="text-center mb-5">Projects</h1>
+
+  <div id="projectCardContainer" className="row g-4">
+    <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
+      <div className="card projectCard d-flex flex-column w-100">
+        <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
+        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
+          <h5 className="card-title">React-Flask</h5>
+          <p className="card-text techStack">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
+          <p className="card-text flex-grow-1">A fullstack project with a working backend and frontend. Utilizes MySQL as the database management system. Perform CRUD operations seamlessly.</p>
+          <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-github gitIcon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
+      <div className="card projectCard d-flex flex-column w-100">
+        <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
+        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
+          <h5 className="card-title">Marvel API</h5>
+          <p className="card-text techStack">React, HTML, CSS</p>
+          <p className="card-text flex-grow-1">A library of Marvel characters is made possible with the use of Marvel API. The user gets to dive deeper into the lore of their favorite character with a simple search bar.</p>
+          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-github gitIcon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
+      <div className="card projectCard d-flex flex-column w-100">
+        <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
+        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
+          <h5 className="card-title">Poke API</h5>
+          <p className="card-text techStack">JavaScript, HTML, CSS</p>
+          <p className="card-text flex-grow-1">The user is met with a flying Lugia sprite and a search bar. By typing in the name or number of the original 151, the user is able to view all of the details for that awesome Pokemon.</p>
+          <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-github gitIcon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
         {/* --------------------------------------------------- About Section --------------------------------------------------- */}
         <div id="aboutContainer" className="container py-5">
           <h1 id="aboutHeader"className="text-center mb-5">About Me</h1>
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
-              <div className="custom-card p-4" id="firstPointContainer">
+              <div className="custom-card" id="firstPointContainer">
                   <div className="icon-container">
                       <i className="bi bi-laptop"></i>
                   </div>
@@ -98,7 +148,7 @@ export const App = () => {
             </div>
 
             <div className="col">
-              <div className="custom-card p-4" id="secondPointContainer">
+              <div className="custom-card" id="secondPointContainer">
                   <div className="icon-container">
                       <i className="bi bi-gear-fill"></i>
                   </div>
@@ -108,7 +158,7 @@ export const App = () => {
             </div>
 
             <div className="col">
-              <div className="custom-card p-4" id="thirdPointContainer">
+              <div className="custom-card" id="thirdPointContainer">
                   <div className="icon-container">
                       <i className="bi bi-graph-up"></i>
                   </div>
@@ -120,8 +170,8 @@ export const App = () => {
         </div>
 
         {/* --------------------------------------------------- Experience Section --------------------------------------------------- */}
-<section id="experience">
-  <h1 id="xpHeader"className="mb-5">Experience</h1>
+        <section id="experience">
+  <h1 id="xpHeader"className="mb-5">Skills</h1>
   <div id="cardsContainer">
     <div id="cards">
       <div className="card">
@@ -199,57 +249,6 @@ export const App = () => {
     </div>
   </div>
 </section>
-
-
-
-        {/* --------------------------------------------------- Projects Section --------------------------------------------------- */}
-        <div id="projectContainer" className="container ">
-  <h1 id="projectsHeader" className="text-center mb-5">Projects</h1>
-
-  <div id="projectCardContainer" className="row g-4">
-    <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
-      <div className="card projectCard d-flex flex-column w-100">
-        <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
-        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-          <h5 className="card-title">React-Flask</h5>
-          <p className="card-text techStack">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
-          <p className="card-text flex-grow-1">A fullstack project with a working backend and frontend. Utilizes MySQL as the database management system. Perform CRUD operations seamlessly.</p>
-          <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github gitIcon fs-3"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
-      <div className="card projectCard d-flex flex-column w-100">
-        <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
-        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-          <h5 className="card-title">Marvel API</h5>
-          <p className="card-text techStack">React, HTML, CSS</p>
-          <p className="card-text flex-grow-1">A library of Marvel characters is made possible with the use of Marvel API. The user gets to dive deeper into the lore of their favorite character with a simple search bar.</p>
-          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github gitIcon fs-3"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
-      <div className="card projectCard d-flex flex-column w-100">
-        <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
-        <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-          <h5 className="card-title">Poke API</h5>
-          <p className="card-text techStack">JavaScript, HTML, CSS</p>
-          <p className="card-text flex-grow-1">The user is met with a flying Lugia sprite and a search bar. By typing in the name or number of the original 151, the user is able to view all of the details for that awesome Pokemon.</p>
-          <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github gitIcon fs-3"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
       </div>
     </>
