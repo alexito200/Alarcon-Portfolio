@@ -90,7 +90,9 @@ export const App = () => {
   <div id="projectCardContainer" className="row g-4">
     <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
       <div className="card projectCard d-flex flex-column w-100">
+        <a href='#'>
         <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
+        </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">React-Flask</h5>
           <p className="card-text techStack">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
