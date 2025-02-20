@@ -90,7 +90,7 @@ export const App = () => {
   <div id="projectCardContainer" className="row g-4">
     <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
       <div className="card projectCard d-flex flex-column w-100">
-        <a href='#'>
+        <a href='#' target="_blank" rel="noopener noreferrer">
         <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
         </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
@@ -118,14 +118,19 @@ export const App = () => {
       </div>
     </div>
 
+
+    
+{/* change to Task Management App */}
     <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
       <div className="card projectCard d-flex flex-column w-100">
-        <img src="./poke-api.jpeg" className="card-img-top" alt="Poke API" />
+        <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <img src="./task-mngt-app-login.png" className="card-img-top" alt="Poke API" />
+        </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-          <h5 className="card-title">Poke API</h5>
-          <p className="card-text techStack">JavaScript, HTML, CSS</p>
-          <p className="card-text flex-grow-1">The user is met with a flying Lugia sprite and a search bar. By typing in the name or number of the original 151, the user is able to view all of the details for that awesome Pokemon.</p>
-          <a href="https://github.com/alexito200/poke-api-project" target="_blank" rel="noopener noreferrer">
+          <h5 className="card-title">Task Management App</h5>
+          <p className="card-text techStack">TypeScript, JS, HTML, CSS, Auth0</p>
+          <p className="card-text flex-grow-1">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard. Users can add new tasks, mark them as complete, edit or delete them, and navigate seamlessly between the Task Dashboard, Task Form, and Task Details pages using Bootstrap-styled components.</p>
+          <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-github gitIcon"></i>
           </a>
         </div>
