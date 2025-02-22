@@ -77,7 +77,8 @@ html {
 #secondPointContainer p,
 #thirdPointContainer p,
 .icon-text-container span,
-.card-text {
+.card-text,
+.footer-text {
     font-family: var(--font-secondary);
 }
 
@@ -232,85 +233,61 @@ html {
 }
 
 /* ------------------------------------------------------------------- Hero -------------------------------------------------------------------- */
-#heroContainer{
-    display: flex;
+#heroContainer {
+    /* display: flex; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 10%;
     margin-bottom: 15%;
 }
-#heroContainer h1{
+
+#heroContainer h1 {
     font-size: 6rem;
 }
+
 #personImage {
     border-radius: 50%;
     width: 450px;
     height: 500px;
     object-fit: cover;
 }
+
 #heroTextContainer {
     color: white;
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left-aligns everything inside */
+    text-align: left;
 }
+
 #typewriterContainer h1 {
     font-size: 5.5rem;
     transition: font-size 0.3s ease;
 }
+
 #typewriterContainer p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transition: font-size 0.3s ease;
 }
+
 #typewriterContainer2 {
     max-width: 800px;
 }
+
 #typewriterContainer2 p {
     font-size: 1.2em;
     transition: font-size 0.3s ease;
 }
-@media (max-width: 1024px) {
-    #typewriterContainer h1 {
-    font-size: 3rem;
-    margin-top: 1.1em;
-    }
-    #typewriterContainer p {
-        font-size: 1.2rem;
-    }
-    #typewriterContainer2 p {
-    font-size: 1rem;
-    }
-}  
-@media (max-width: 768px) {
-    #typewriterContainer h1 {
-    font-size: 2.5rem;
-    }
-    #typewriterContainer p {
-    font-size: 1rem;
-    }
-    #typewriterContainer2 p {
-    font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 480px) {
-    #typewriterContainer h1 {
-    font-size: 2rem;
-    }
-    #typewriterContainer p {
-    font-size: 0.9rem;
-    }
-    #typewriterContainer2 p {
-    font-size: 0.8rem;
-    }
-}
-.link-button > #contactButton {
-    font-size: 1.1em;
-}
+/* Ensures button is aligned to the left */
 #contactButton {
+    align-self: flex-start;
     background-color: #FCA311;
     border: none;
     color: var(--primary-text-color); 
     border-radius: 50px;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     padding: 10px 12px;
     position: relative;
     overflow: hidden;
@@ -337,6 +314,69 @@ html {
     opacity: 1;
     transform: translateY(-50%) translateX(-20px);
 }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    #typewriterContainer h1 {
+        font-size: 3rem;
+        margin-top: 1.1em;
+    }
+    #typewriterContainer p {
+        font-size: 1.2rem;
+    }
+    #typewriterContainer2 p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #heroContainer {
+        flex-direction: column; /* Stack image and text on small screens */
+        text-align: center;
+    }
+
+    #heroTextContainer {
+        align-items: center; /* Center everything on mobile */
+        text-align: center;
+        padding-left: 0;
+    }
+
+    #contactButton {
+        align-self: center; /* Center button on smaller screens */
+    }
+
+    #typewriterContainer h1 {
+        font-size: 2.5rem;
+    }
+    #typewriterContainer p {
+        font-size: 1rem;
+    }
+    #typewriterContainer2 p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #typewriterContainer h1 {
+        font-size: 2rem;
+    }
+    #typewriterContainer p {
+        font-size: 0.9rem;
+    }
+    #typewriterContainer2 p {
+        font-size: 0.8rem;
+    }
+}
+
+.typed-color-1, 
+.typed-color-2, 
+.typed-color-3 {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 /* ------------------------------------------------------------------- About -------------------------------------------------------------------- */
 #aboutContainer {
@@ -578,6 +618,7 @@ html {
 }
 
 /* ------------------------------------------------------------------- Projects -------------------------------------------------------------------- */
+/* === Project Section Styles === */
 #projectContainer {
     margin-bottom: 15%;
 }
@@ -590,7 +631,7 @@ html {
 #projectCardContainer .projectCard {
     margin: 30px 30px;
 }
-#projectContainer h1{
+#projectContainer h1 {
     font-size: 3rem;
     color: white;
     text-align: center;
@@ -632,14 +673,76 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.gitIcon {
+
+/* === Icon Styles === */
+.gitIcon, .circleIcon {
     color: #FCA311;
     transition: all 0.3s ease-in-out;
     font-size: 2em;
-    position: absolute;
-    bottom: 10px; /* Adjust the position from the bottom */
-    left: 10px;
+    position: relative;
 }
-.gitIcon:hover {
+
+.gitIcon {
+    margin-right: 15px;
+}
+
+.gitIcon:hover, .circleIcon:hover {
     color: white;
 }
+
+/* === Comment Box Hover Effect (Positioned Above the Icons) === */
+.icon-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.comment-box {
+    position: absolute;
+    bottom: 40px; /* Moves the comment box ABOVE the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 10;
+    pointer-events: none; /* Prevents hover flickering */
+}
+
+.icon-container:hover .comment-box {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+
+
+
+/* ------------------------------------------------------------------- Footer -------------------------------------------------------------------- */
+
+.footer {
+    background-color: #121212; /* Dark Gray for compatibility */
+    color: #E0E0E0; /* Soft White for readability */
+    padding: 1rem 0;
+    text-align: center;
+}
+.footer-text {
+    font-size: 1.2rem;
+}
+
+.footer-icon {
+    color: #FCA311; /* Custom Icon Color */
+    font-size: 2em;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-icon:hover {
+    color: #ffffff; /* Change to white on hover */
+}
+

@@ -64,22 +64,37 @@ export const App = () => {
           </div>
           <div id="heroTextContainer" className="text-center text-lg-start">
             <div id="typewriterContainer">
-              <h1>
-              I&apos;m{" "}
-              <ReactTyped strings={["Alex Alarcon"]} typeSpeed={110} loop />
-              </h1>
-              <p>Full Stack Developer | Passionate about Web Technologies</p>
+              <h1>Hi, It&#39;s Alex</h1>
+              <p>
+  I&apos;m a{" "}
+  <ReactTyped
+    strings={[
+      '<span class="typed-color-1">Web Designer</span>',
+      '<span class="typed-color-2">Software Engineer</span>',
+      '<span class="typed-color-3">National Guardsman</span>'
+    ]}
+    typeSpeed={140}
+    loop
+    smartBackspace
+  />
+</p>
+
             </div>
             <div id="typewriterContainer2">
               <p>
-              I am a Fullstack Developer with expertise in building comprehensive web applications, encompassing both front-end and back-end development. I am a recent graduate of Coding Temple.
+              From Air Force discipline to full-stack efficiency—versatile, team-driven, and ready to build.
               </p>
             </div>
-            <Link to="/contact" className="link-button">
-              <Button className="btn" id="contactButton">
-                Contact Me
-              </Button>
-            </Link>
+
+            <Button 
+              className="btn" 
+              id="contactButton" 
+              onClick={() => document.getElementById("projectContainer")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Explore Projects
+            </Button>
+
+
           </div>
         </div>
 
@@ -90,54 +105,81 @@ export const App = () => {
   <div id="projectCardContainer" className="row g-4">
     <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
       <div className="card projectCard d-flex flex-column w-100">
-        <a href='#' target="_blank" rel="noopener noreferrer">
-        <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
+        <a href='https://react-flask-project-qxux.vercel.app/' target="_blank" rel="noopener noreferrer">
+          <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
         </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-          <h5 className="card-title">React-Flask</h5>
-          <p className="card-text techStack">React, Python, Postman, HTML, CSS, MySQL, SQLAlchemy</p>
-          <p className="card-text flex-grow-1">A fullstack project with a working backend and frontend. Utilizes MySQL as the database management system. Perform CRUD operations seamlessly.</p>
-          <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github gitIcon"></i>
-          </a>
+          <h5 className="card-title">E-commerce App</h5>
+          <p className="card-text techStack">React, TypeScript, HTML, CSS</p>
+          <p className="card-text flex-grow-1">My E-commerce App allows users to create and view product and customer details, shop products using a shopping cart for order processing and order review, and leverages a mirage server to generate mock data.</p>
+          <div className="icon-container">
+            <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-github gitIcon"></i>
+              <div className="comment-box">View Source Code</div>
+            </a>
+          </div>
+          <div className="icon-container">
+            <a href="https://react-flask-project-qxux.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
+              <div className="comment-box">Live Demo</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
     <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
       <div className="card projectCard d-flex flex-column w-100">
-        <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
+        </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">Marvel API</h5>
           <p className="card-text techStack">React, HTML, CSS</p>
           <p className="card-text flex-grow-1">A library of Marvel characters is made possible with the use of Marvel API. The user gets to dive deeper into the lore of their favorite character with a simple search bar.</p>
-          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github gitIcon"></i>
-          </a>
+          <div className="icon-container">
+            <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-github gitIcon"></i>
+              <div className="comment-box">View Source Code</div>
+            </a>
+          </div>
+          <div className="icon-container">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
+              <div className="comment-box">Live Demo</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-
-    
-{/* change to Task Management App */}
     <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
       <div className="card projectCard d-flex flex-column w-100">
         <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <img src="./task-mngt-app-login.png" className="card-img-top" alt="Poke API" />
+          <img src="./task-mngt-app-login.png" className="card-img-top" alt="Task Management App" />
         </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">Task Management App</h5>
           <p className="card-text techStack">TypeScript, JS, HTML, CSS, Auth0</p>
           <p className="card-text flex-grow-1">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard. Users can add new tasks, mark them as complete, edit or delete them, and navigate seamlessly between the Task Dashboard, Task Form, and Task Details pages using Bootstrap-styled components.</p>
-          <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github gitIcon"></i>
-          </a>
+          <div className="icon-container">
+            <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-github gitIcon"></i>
+              <div className="comment-box">View Source Code</div>
+            </a>
+          </div>
+          <div className="icon-container">
+            <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
+              <div className="comment-box">Live Demo</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
         {/* --------------------------------------------------- About Section --------------------------------------------------- */}
@@ -256,6 +298,28 @@ export const App = () => {
     </div>
   </div>
 </section>
+
+        {/* --------------------------------------------------- Footer Section --------------------------------------------------- */}
+
+        <footer className="footer mt-auto">
+    <div className="container">
+        <p className="mb-2 footer-text">© 2025 Alarcon. All Rights Reserved.</p>
+        <div className="d-flex justify-content-center gap-3">
+            <a href="https://github.com/alexito200" className="footer-icon" aria-label="GitHub">
+                <i className="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/alex-alarcon-82fb088/" className="footer-icon" aria-label="LinkedIn">
+                <i className="bi bi-linkedin"></i>
+            </a>
+            <a href="mailto:your-email@example.com?subject=Let's Connect&body=Hi Alex, I found your portfolio and I'd love to connect!" 
+  className="footer-icon" 
+  aria-label="Email">
+    <i className="bi bi-envelope"></i>
+</a>
+        </div>
+    </div>
+</footer>
+
 
       </div>
     </>
