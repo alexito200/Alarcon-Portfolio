@@ -64,7 +64,7 @@ export const App = () => {
           </div>
           <div id="heroTextContainer" className="text-center text-lg-start">
             <div id="typewriterContainer">
-              <h1>Hi, It&#39;s Alex</h1>
+              <h1>Hi, It&#39;s <span>Alex</span></h1>
               <p>
   I&apos;m a{" "}
   <ReactTyped
@@ -111,14 +111,12 @@ export const App = () => {
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">E-commerce App</h5>
           <p className="card-text techStack">React, TypeScript, HTML, CSS</p>
-          <p className="card-text flex-grow-1">My E-commerce App allows users to create and view product and customer details, shop products using a shopping cart for order processing and order review, and leverages a mirage server to generate mock data.</p>
-          <div className="icon-container">
+          <p className="card-text flex-grow-1">Shop around with a mock E-commerce app complete with customers, products, orders, and a shopping cart.</p>
+          <div className="icon-container2">
             <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-github gitIcon"></i>
               <div className="comment-box">View Source Code</div>
             </a>
-          </div>
-          <div className="icon-container">
             <a href="https://react-flask-project-qxux.vercel.app/" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
               <div className="comment-box">Live Demo</div>
@@ -136,14 +134,12 @@ export const App = () => {
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
           <h5 className="card-title">Marvel API</h5>
           <p className="card-text techStack">React, HTML, CSS</p>
-          <p className="card-text flex-grow-1">A library of Marvel characters is made possible with the use of Marvel API. The user gets to dive deeper into the lore of their favorite character with a simple search bar.</p>
-          <div className="icon-container">
+          <p className="card-text flex-grow-1">Search for your favorite Marvel character or comic book with this website connected to the Marvel API.</p>
+          <div className="icon-container2">
             <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-github gitIcon"></i>
               <div className="comment-box">View Source Code</div>
             </a>
-          </div>
-          <div className="icon-container">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
               <div className="comment-box">Live Demo</div>
@@ -159,16 +155,14 @@ export const App = () => {
           <img src="./task-mngt-app-login.png" className="card-img-top" alt="Task Management App" />
         </a>
         <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-          <h5 className="card-title">Task Management App</h5>
+          <h5 className="card-title">Task Manager App</h5>
           <p className="card-text techStack">TypeScript, JS, HTML, CSS, Auth0</p>
-          <p className="card-text flex-grow-1">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard. Users can add new tasks, mark them as complete, edit or delete them, and navigate seamlessly between the Task Dashboard, Task Form, and Task Details pages using Bootstrap-styled components.</p>
-          <div className="icon-container">
+          <p className="card-text flex-grow-1">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard.</p>
+          <div className="icon-container2">
             <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-github gitIcon"></i>
               <div className="comment-box">View Source Code</div>
             </a>
-          </div>
-          <div className="icon-container">
             <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
               <div className="comment-box">Live Demo</div>
@@ -188,7 +182,7 @@ export const App = () => {
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
               <div className="custom-card" id="firstPointContainer">
-                  <div className="icon-container">
+                  <div className="icon-container1">
                       <i className="bi bi-laptop"></i>
                   </div>
                   <h4 className="mt-2">Web Development</h4>
@@ -198,7 +192,7 @@ export const App = () => {
 
             <div className="col">
               <div className="custom-card" id="secondPointContainer">
-                  <div className="icon-container">
+                  <div className="icon-container1">
                       <i className="bi bi-gear-fill"></i>
                   </div>
                   <h4 className="mt-2">Software Engineering</h4>
@@ -208,7 +202,7 @@ export const App = () => {
 
             <div className="col">
               <div className="custom-card" id="thirdPointContainer">
-                  <div className="icon-container">
+                  <div className="icon-container1">
                       <i className="bi bi-graph-up"></i>
                   </div>
                   <h4 className="mt-2">Data Analytics</h4>
@@ -302,8 +296,8 @@ export const App = () => {
         {/* --------------------------------------------------- Footer Section --------------------------------------------------- */}
 
         <footer className="footer mt-auto">
-    <div className="container">
-        <p className="mb-2 footer-text">© 2025 Alarcon. All Rights Reserved.</p>
+    <div className="footerContainer">
+        <p className="mb-2 footer-text">Designed and Coded by <span>Alex Alarcon</span></p>
         <div className="d-flex justify-content-center gap-3">
             <a href="https://github.com/alexito200" className="footer-icon" aria-label="GitHub">
                 <i className="bi bi-github"></i>

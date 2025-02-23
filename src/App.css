@@ -234,9 +234,7 @@ html {
 
 /* ------------------------------------------------------------------- Hero -------------------------------------------------------------------- */
 #heroContainer {
-    /* display: flex; */
     align-items: center;
-    /* justify-content: center; */
     margin-top: 10%;
     margin-bottom: 15%;
 }
@@ -269,6 +267,13 @@ html {
 #typewriterContainer p {
     font-size: 1.8rem;
     transition: font-size 0.3s ease;
+}
+#typewriterContainer span {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(252, 163, 17, 0.6); /* Subtle glow effect */
 }
 
 #typewriterContainer2 {
@@ -367,6 +372,11 @@ html {
         font-size: 0.8rem;
     }
 }
+@media (max-width: 425px) {
+    #typewriterContainer2 p {
+        margin: 1em;
+    }
+}
 
 .typed-color-1, 
 .typed-color-2, 
@@ -375,6 +385,7 @@ html {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(252, 163, 17, 0.6); /* Subtle glow effect */
 }
 
 
@@ -470,7 +481,7 @@ html {
     padding: 20px;
     text-align: center;
 }
-.icon-container {
+.icon-container1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -529,20 +540,20 @@ html {
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* filter: grayscale(100%); */
+    /* transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; */
 }
 
-#cards > .card:hover {
+/* #cards > .card:hover {
     filter: grayscale(0%);
     transform: scale(1.05);
-}
+} */
 
 #cards > .card:hover .icon-text-container {
     z-index: 2;
 }
 
-#cards > .card::before {
+/* #cards > .card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -551,13 +562,11 @@ html {
     height: 100%;
     background-color: #F4F4F4;
     transition: left 0.3s ease-in-out;
-}
+} */
 
 #cards > .card:hover::before {
     left: 0;
 }
-
-
 
 @media (max-width: 767px) {
     #cards {
@@ -581,7 +590,7 @@ html {
 }
 
 #cardsContainer #cards .card {
-    background-color: #919191;
+    /* background-color: #919191; */
     height: auto;
     width: 100%;
     min-width: 150px;
@@ -603,13 +612,13 @@ html {
     height: 50px;
     width: 50px;
     margin-right: 10px;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     transition: filter 0.3s ease;
 }
 
-#cardsContainer #cards .card:hover .tech-logo {
+/* #cardsContainer #cards .card:hover .tech-logo {
     filter: grayscale(0%);
-}
+} */
 
 #cardsContainer #cards .card span {
     color: #333;
@@ -672,6 +681,8 @@ html {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
 }
 
 /* === Icon Styles === */
@@ -691,15 +702,14 @@ html {
 }
 
 /* === Comment Box Hover Effect (Positioned Above the Icons) === */
-.icon-container {
+.icon-container2 {
     position: relative;
     display: inline-block;
-    text-align: center;
 }
 
 .comment-box {
     position: absolute;
-    bottom: 40px; /* Moves the comment box ABOVE the icon */
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.85);
@@ -712,10 +722,10 @@ html {
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     z-index: 10;
-    pointer-events: none; /* Prevents hover flickering */
+    pointer-events: none;
 }
 
-.icon-container:hover .comment-box {
+.icon-container2:hover .comment-box {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-5px);
@@ -744,5 +754,11 @@ html {
 
 .footer-icon:hover {
     color: #ffffff; /* Change to white on hover */
+}
+.footerContainer span {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
