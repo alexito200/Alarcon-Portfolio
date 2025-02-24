@@ -651,9 +651,9 @@ html[data-theme="dark"], body[data-theme="dark"] {
     justify-content: center;
     align-items: center;
 }
-#projectCardContainer .projectCard {
+/* #projectCardContainer .projectCard {
     margin: 30px 30px;
-}
+} */
 #projectContainer h1 {
     font-size: 3rem;
     color: white;
@@ -673,23 +673,6 @@ html[data-theme="dark"], body[data-theme="dark"] {
     z-index: 2;
 }
 
-#projectCardContainer .projectCard::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    background: linear-gradient(45deg, #ff6f61, #FCA311);
-    border-radius: 4px;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-}
-
-#projectCardContainer .projectCard:hover::before {
-    background: linear-gradient(45deg, #FCA311, #ff6f61);
-}
-
 .techStack {
     background: linear-gradient(90deg, #ff6f61, #FCA311);
     background-clip: text;
@@ -697,6 +680,72 @@ html[data-theme="dark"], body[data-theme="dark"] {
     -webkit-text-fill-color: transparent;
     font-weight: 600;
     transition: color 0.3s ease-in-out;
+}
+.topCard {
+    position: relative; /* Allows pseudo-elements to exist behind */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Cards */
+.projectCard {
+    width: 240px;
+    height: 280px;
+    transition: all 0.1s ease-out;
+    background: #000000;
+    color: white;
+    border-radius: 4px;
+    padding: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    box-sizing: content-box;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Animated Background Effect - Now Applied to Wrapper */
+.topCard::before,
+.topCard::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 105%;
+    top: 50%;
+    left: 50%;
+    background-image: conic-gradient(from var(--angle),transparent 80%, #ff6f61, #FCA311), conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311);;
+    translate: -50% -50%;
+    /* z-index: -1; */
+    border-radius: 12px;
+    padding: 10px;
+    animation: spin 9s linear infinite;
+}
+
+/* Adds a blurred glow effect */
+.topCard::before {
+    filter: blur(2.5rem);
+    opacity: 0.6;
+    /* z-index: -2; */
+}
+
+/* Keyframe Animation */
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 /* === Icon Styles === */

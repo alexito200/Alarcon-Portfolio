@@ -131,7 +131,7 @@ export const App = () => {
       </div>
     </div>
 
-    <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex">
+    <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex topCard">
       <div className="card projectCard d-flex flex-column w-100">
         <a href="#" target="_blank" rel="noopener noreferrer">
           <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
@@ -154,7 +154,7 @@ export const App = () => {
       </div>
     </div>
 
-    <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto">
+    <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto topCard">
       <div className="card projectCard d-flex flex-column w-100">
         <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer">
           <img src="./task-mngt-app-login.png" className="card-img-top" alt="Task Management App" />
