@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { Toggle } from "./context/ThemeToggle";
 import { ReactTyped } from "react-typed";
+import  BackToTopButton  from "./components/topButton";
 
 
 export const App = () => {
@@ -27,7 +28,7 @@ export const App = () => {
       <div id='container' data-theme={isDark ? "dark" : "light"}>
         
         {/* --------------------------------------------------- Navbar Section --------------------------------------------------- */}
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg sticky-top">
   <div className="container-fluid d-flex justify-content-between align-items-center w-100">
     <a className="navbar-brand" href="/">Alarcon</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"  aria-expanded="false" aria-label="Toggle navigation">
@@ -37,21 +38,24 @@ export const App = () => {
     <div className="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNavAltMarkup">
       <div className="d-flex justify-content-center flex-grow-1">
         <div className="barNav navbar-nav" id="navButtons">
-          <a className="nav-item nav-link py-2 px-2" href="#aboutContainer">About</a>
-          <a className="nav-item nav-link py-2 px-2" href="#experience">Experience</a>
           <a className="nav-item nav-link py-2 px-2" href="#projectContainer">Projects</a>
+          <a className="nav-item nav-link py-2 px-2" href="#aboutContainer">About</a>
+          <a className="nav-item nav-link py-2 px-2" href="#experience">Skills</a>
           <Link className="nav-item nav-link py-2 px-2" to="/contact">Contact</Link>
         </div>
       </div>
 
       <div className="navbar-nav ms-lg-auto mt-2 mt-lg-0">
-        <a className="nav-item nav-link px-4 py-4" id="themeButton" href="#">
-          <Toggle
-            isChecked={isDark}
-            handleChange={setIsDark}
-          />
-        </a>
-      </div>
+  <div 
+    className="nav-item nav-link px-4 py-4" 
+    id="themeButton"
+    onClick={() => setIsDark(!isDark)}
+    style={{ cursor: "pointer" }}
+  >
+    <Toggle isChecked={isDark} handleChange={setIsDark} />
+  </div>
+</div>
+
     </div>
   </div>
 </nav>
@@ -71,7 +75,8 @@ export const App = () => {
     strings={[
       '<span class="typed-color-1">Web Designer</span>',
       '<span class="typed-color-2">Software Engineer</span>',
-      '<span class="typed-color-3">National Guardsman</span>'
+      '<span class="typed-color-3">National Guardsman</span>',
+      '<span class="typed-color-4">Fullstack Developer</span>'
     ]}
     typeSpeed={140}
     loop
@@ -94,7 +99,7 @@ export const App = () => {
                 Explore Projects
             </Button>
 
-
+            <BackToTopButton />
           </div>
         </div>
 
@@ -177,43 +182,126 @@ export const App = () => {
 
 
         {/* --------------------------------------------------- About Section --------------------------------------------------- */}
-        <div id="aboutContainer" className="container py-5">
-          <h1 id="aboutHeader"className="text-center mb-5">About Me</h1>
-          <div className="row row-cols-1 row-cols-md-3 g-4">
-            <div className="col">
-              <div className="custom-card" id="firstPointContainer">
-                  <div className="icon-container1">
-                      <i className="bi bi-laptop"></i>
-                  </div>
-                  <h4 className="mt-2">Web Development</h4>
-                  <p>Build modern, responsive, and efficient websites with the latest technologies.</p>
-              </div>
-            </div>
+          <h1 id='aboutHeader'>About Me</h1>
+        <div className="wrapper">
+  <div className="one-item">
+  <div className="about-text">
+      <p>
+        I’m a **Full-Stack Developer** passionate about building scalable, user-friendly applications. 
+        With a background in the **Air National Guard**, I bring discipline, adaptability, and problem-solving to every project. 
+        My expertise includes **React, TypeScript, Firebase, Python, and SQL**, and I love turning ideas into impactful solutions.
+      </p>
+    </div>
+  </div>
+  <div className="two-item">
+  <div className="about-image">
+      <img src="./air-force-profile-picture.jpg" alt="Your Name" />
+    </div>
+  </div>
+  <div className="three-item">
+  <div className="about-cards">
+      <div className="custom-card">
+        <i className="bi bi-code-slash"></i>
+        <h4>Fullstack Development</h4>
+        <p>Combining elegant front-end design with powerful back-end functionality to deliver seamless web experiences from concept to launch.</p>
+      </div>
 
-            <div className="col">
-              <div className="custom-card" id="secondPointContainer">
-                  <div className="icon-container1">
-                      <i className="bi bi-gear-fill"></i>
-                  </div>
-                  <h4 className="mt-2">Software Engineering</h4>
-                  <p>Design and develop high-quality software solutions with best practices.</p>
-              </div>
-            </div>
+      <div className="custom-card">
+        <i className="bi bi-gear-fill"></i>
+        <h4>Software Engineering</h4>
+        <p>I specialize in creating scalable solutions that enhance efficiency, support growth, and ensure long-term adaptability for evolving technological needs.</p>
+      </div>
 
-            <div className="col">
-              <div className="custom-card" id="thirdPointContainer">
-                  <div className="icon-container1">
-                      <i className="bi bi-graph-up"></i>
-                  </div>
-                  <h4 className="mt-2">Data Analytics</h4>
-                  <p>Analyze and interpret data to drive business insights and decisions.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="custom-card">
+        <i className="bi bi-puzzle-fill"></i>
+        <h4>Problem-Solving</h4>
+        <p>I specialize in optimizing workflows and enhancing efficiency by implementing streamlined processes, automation, and scalable solutions that improve productivity and performance.</p>
+      </div>
+    </div>
+  </div>
+  <div className="four-item">
+  <div className="tech-stack">
+  {[
+    "./html.png",
+    "./css.png",
+    "./js.png",
+    "./react.png",
+    "./vite.png",
+    "./firebase.png",
+    "./python.png",
+    "./mysql.png",
+    "./flask.png",
+    "./github.png",
+    "./figma.png",
+    "./redux.png",
+    "./vs-code.png",
+    "./typescript.png",
+    "./bootstrap.png",
+    "./react-bootstrap.png",
+    "./postman.png",
+    "./vercel.png",
+  ].map((src, index) => (
+    <div key={index} className="tech-card">
+      <img src={src} alt={`Tech ${index}`} className="tech-icon" />
+    </div>
+  ))}
+</div>
+
+  </div>
+</div>
+
+
 
         {/* --------------------------------------------------- Experience Section --------------------------------------------------- */}
-        <section id="experience">
+        {/* <div className="wrapper">
+  <div className="one-item">
+  <div className="about-text">
+      <p>
+        I’m a **Full-Stack Developer** passionate about building scalable, user-friendly applications. 
+        With a background in the **Air National Guard**, I bring discipline, adaptability, and problem-solving to every project. 
+        My expertise includes **React, TypeScript, Firebase, Python, and SQL**, and I love turning ideas into impactful solutions.
+      </p>
+    </div>
+  </div>
+  <div className="two-item">
+  <div className="about-image">
+      <img src="./profile-picture.jpeg" alt="Your Name" />
+    </div>
+  </div>
+  <div className="three-item">
+  <div className="about-cards">
+      <div className="custom-card">
+        <i className="bi bi-laptop"></i>
+        <h4>Web Development</h4>
+        <p>Building modern web applications.</p>
+      </div>
+
+      <div className="custom-card">
+        <i className="bi bi-gear-fill"></i>
+        <h4>Software Engineering</h4>
+        <p>Creating scalable solutions.</p>
+      </div>
+
+      <div className="custom-card">
+        <i className="bi bi-graph-up"></i>
+        <h4>Problem-Solving</h4>
+        <p>Optimizing workflows & efficiency.</p>
+      </div>
+    </div>
+  </div>
+  <div className="four-item">
+  <div className="tech-stack">
+      {Array.from({ length: 18 }).map((_, index) => (
+        <div key={index} className="tech-card">
+          <i className="bi bi-code-slash"></i>
+        </div>
+      ))}
+    </div>
+  </div>
+</div> */}
+
+        
+        {/* <section id="experience">
   <h1 id="xpHeader"className="mb-5">Skills</h1>
   <div id="cardsContainer">
     <div id="cards">
@@ -291,7 +379,7 @@ export const App = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
         {/* --------------------------------------------------- Footer Section --------------------------------------------------- */}
 
