@@ -200,18 +200,26 @@ export const App = () => {
   </div>
   <div className="three-item">
   <div className="about-cards">
+    {/* Fullstack Development */}
+    <div className="custom-card-wrapper">
       <div className="custom-card">
         <i className="bi bi-code-slash"></i>
         <h4>Fullstack Development</h4>
         <p>Combining elegant front-end design with powerful back-end functionality to deliver seamless web experiences from concept to launch.</p>
       </div>
+    </div>
 
+    {/* Software Engineering */}
+    <div className="custom-card-wrapper">
       <div className="custom-card">
         <i className="bi bi-gear-fill"></i>
         <h4>Software Engineering</h4>
         <p>I specialize in creating scalable solutions that enhance efficiency, support growth, and ensure long-term adaptability for evolving technological needs.</p>
       </div>
+    </div>
 
+    {/* Problem-Solving */}
+    <div className="custom-card-wrapper">
       <div className="custom-card">
         <i className="bi bi-puzzle-fill"></i>
         <h4>Problem-Solving</h4>
@@ -219,6 +227,8 @@ export const App = () => {
       </div>
     </div>
   </div>
+</div>
+
   <div className="four-item">
   <div className="tech-stack">
   {[

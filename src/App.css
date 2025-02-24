@@ -36,6 +36,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 .navbar-brand,
 .nav-item,
 .pointCardBodyItem,
+.about-text,
 .xp,
 #xpHeader,
 #aboutHeader,
@@ -79,6 +80,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 #thirdPointContainer p,
 .icon-text-container span,
 .card-text,
+.about-text,
 .footer-text {
     font-family: var(--font-secondary);
 }
@@ -456,19 +458,21 @@ html[data-theme="dark"], body[data-theme="dark"] {
 /* Top Left - Paragraph */
 .about-text {
     border: 2px solid #FCA311;
-    padding: 20px;
+    padding: 1em 2em;
     text-align: left;
-    min-height: 100%;
+    min-height: 50%;
+    font-size: 1.7em;
+    border-radius: 15px;
 }
 
 /* Top Right - Image */
 .about-image img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 40%;
+    max-width: 600px;
+    border-radius: 67% 33% 69% 31% / 42% 33% 67% 58%; 
     object-fit: cover;
-    border: 3px solid #FCA311;
-    margin: 2em 4em;
+    /* border: 3px solid #FCA311; */
+    margin: 1em 2em;
 }
 
 /* Bottom Left - 3 Horizontally Aligned Cards */
@@ -476,33 +480,80 @@ html[data-theme="dark"], body[data-theme="dark"] {
     display: flex;
     justify-content: center;
     gap: 15px;
-    align-self: flex-start; /* Keeps it in the bottom left */
+    align-self: flex-start;
     margin: 2em 4em;
 }
 
 /* Individual Cards */
-/* .custom-card {
+/* Wrapper that holds the card and background */
+.custom-card-wrapper {
+    position: relative; /* Allows pseudo-elements to exist behind */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Cards */
+.custom-card {
     width: 240px;
     height: 280px;
-    transition: all 0.3s ease-out;
-    background-color: #14213D;
+    transition: all 0.1s ease-out;
+    background: #000000;
     color: white;
     border-radius: 15px;
-    padding: 10px;
+    padding: 2em;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    box-sizing: content-box;
 }
 
-.custom-card:hover {
-    transform: translateY(-5px) scale(1.005) translateZ(0);
-    box-shadow: 0 24px 36px rgba(0,0,0,0.11), 0 24px 46px var(--box-shadow-color);
-    border-color: #FCA311;
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Animated Background Effect - Now Applied to Wrapper */
+.custom-card-wrapper::before,
+.custom-card-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    top: 50%;
+    left: 50%;
+    background-image: conic-gradient(from var(--angle),transparent 80%, #ff6f61, #FCA311), conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311);;
+    translate: -50% -50%;
+    /* z-index: -1; */
+    border-radius: 15px;
+    animation: spin 9s linear infinite;
+}
+
+/* Adds a blurred glow effect */
+.custom-card-wrapper::before {
+    filter: blur(2.5rem);
+    opacity: 0.6;
+    /* z-index: -2; */
+}
+
+/* Keyframe Animation */
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 
+/* Icon & Text Size in Cards */
 .custom-card i {
     font-size: 2em;
     margin-bottom: 5px;
@@ -517,7 +568,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     font-size: 0.8em;
     color: #F4F4F4;
     margin-top: 5px;
-} */
+}
 
 /* Bottom Right - Tech Stack Grid (3 Rows x 6 Columns) */
 .tech-stack {
@@ -527,7 +578,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     gap: 10px;
     justify-content: center;
     padding: 2em 4em;
-    margin: 2em 4em;
+    margin: 4em 4em;
 }
 
 /* Small Tech Stack Cards */
@@ -730,84 +781,15 @@ html[data-theme="dark"], body[data-theme="dark"] {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-.one-item {
+/* .one-item {
     background-color: #00a6ff;
 }
 .two-item {
     background-color: #9900ff;
 }
-/* .three-item {
+.three-item {
     background-color: #ff0000;
-} */
+}
 .four-item {
     background-color: #11ff00;
-}
-
-/* Individual Cards */
-.custom-card {
-    width: 240px; /* Custom width */
-    height: 280px; /* Custom height */
-    transition: all 0.3s ease-out;
-    background-color: #14213D;
-    color: white;
-    border-radius: 15px;
-    padding: 1.2em;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-/* Hover Effects for Cards */
-.custom-card::after, .custom-card::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    background-image: conic-gradient(from var(--angle), transparent 70%, blue, red);
-    translate: -50% -50%;
-    z-index: 1;
-    padding: 10px;
-    border-radius: 10px;
-    animation: 9s spin linear infinite;
-}
-.custom-card::before {
-    filter: blur(1.5rem);
-    opacity: 0.5;
-}
-
-@keyframes spin {
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}
-
-/* Icon & Text Size in Cards */
-.custom-card i {
-    font-size: 2em;
-    margin-bottom: 5px;
-}
-
-.custom-card h4 {
-    font-size: 1.2em;
-    margin-bottom: 3px;
-}
-
-.custom-card p {
-    font-size: 0.8em;
-    color: #F4F4F4;
-    margin-top: 5px;
-}
+} */
