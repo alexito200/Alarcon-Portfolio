@@ -214,7 +214,7 @@ export const App = () => {
 
 
 
-        {/* --------------------------------------------------- Experience Section --------------------------------------------------- */}
+        {/* --------------------------------------------------- Skills/Experience Section --------------------------------------------------- */}
         <div id="xpContainer">
           <h1 id="skillsHeader">My Competitive <span>Edge</span></h1>
         <div className="three-item">
@@ -313,134 +313,6 @@ export const App = () => {
 
 
 </div>
-        
-        {/* <div className="wrapper">
-  <div className="one-item">
-  <div className="about-text">
-      <p>
-        I’m a **Full-Stack Developer** passionate about building scalable, user-friendly applications. 
-        With a background in the **Air National Guard**, I bring discipline, adaptability, and problem-solving to every project. 
-        My expertise includes **React, TypeScript, Firebase, Python, and SQL**, and I love turning ideas into impactful solutions.
-      </p>
-    </div>
-  </div>
-  <div className="two-item">
-  <div className="about-image">
-      <img src="./profile-picture.jpeg" alt="Your Name" />
-    </div>
-  </div>
-  <div className="three-item">
-  <div className="about-cards">
-      <div className="custom-card">
-        <i className="bi bi-laptop"></i>
-        <h4>Web Development</h4>
-        <p>Building modern web applications.</p>
-      </div>
-
-      <div className="custom-card">
-        <i className="bi bi-gear-fill"></i>
-        <h4>Software Engineering</h4>
-        <p>Creating scalable solutions.</p>
-      </div>
-
-      <div className="custom-card">
-        <i className="bi bi-graph-up"></i>
-        <h4>Problem-Solving</h4>
-        <p>Optimizing workflows & efficiency.</p>
-      </div>
-    </div>
-  </div>
-  <div className="four-item">
-  <div className="tech-stack">
-      {Array.from({ length: 18 }).map((_, index) => (
-        <div key={index} className="tech-card">
-          <i className="bi bi-code-slash"></i>
-        </div>
-      ))}
-    </div>
-  </div>
-</div> */}
-
-        
-        {/* <section id="experience">
-  <h1 id="xpHeader"className="mb-5">Skills</h1>
-  <div id="cardsContainer">
-    <div id="cards">
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./html.png" alt="HTML" className="tech-logo" />
-          <span>HTML</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./css.png" alt="CSS" className="tech-logo" />
-          <span>CSS</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./js.png" alt="JavaScript" className="tech-logo" />
-          <span>JavaScript</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./react.png" alt="React" className="tech-logo" />
-          <span>React</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./postman.png" alt="Postman" className="tech-logo" />
-          <span>Postman</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./python.png" alt="Python" className="tech-logo" />
-          <span>Python</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./mysql.png" alt="MySQL" className="tech-logo" />
-          <span>MySQL</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./figma.png" alt="Figma" className="tech-logo" />
-          <span>Figma</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./bootstrap.png" alt="Bootstrap" className="tech-logo" />
-          <span>Bootstrap</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./react-bootstrap.png" alt="React-Bootstrap" className="tech-logo" />
-          <span>React-Bootstrap</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./redux.png" alt="Redux" className="tech-logo" />
-          <span>Redux</span>
-        </div>
-      </div>
-      <div className="card">
-        <div className="icon-text-container">
-          <img src="./typescript.png" alt="TypeScript" className="tech-logo" />
-          <span>TypeScript</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> */}
 
         {/* --------------------------------------------------- Footer Section --------------------------------------------------- */}
 

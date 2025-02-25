@@ -13,6 +13,10 @@ html, body {
     --toggle-fg: #00a6ff;
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Hind', sans-serif;
+    --gradient-color: linear-gradient(90deg, #ff6f61, #FCA311);
+    --gradient-hover-color: linear-gradient(135deg, #764BA2, #667EEA);
+    --gradient-start: #ff6f61;
+    --gradient-end: #FCA311;
 }
 [data-theme="light"] {
     --background-color: #FFFFFF;
@@ -23,6 +27,10 @@ html, body {
     --toggle-fg: #ffd000;
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Hind', sans-serif;
+    --gradient-color: linear-gradient(135deg, #764BA2, #667EEA);
+    --gradient-hover-color: linear-gradient(90deg, #ff6f61, #FCA311);
+    --gradient-start: #764BA2;
+    --gradient-end: #667EEA;
 }
 html[data-theme="dark"], body[data-theme="dark"] {
     background-color: var(--background-color);
@@ -97,7 +105,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     background-color: #1C1C1C;
 }
 ::-webkit-scrollbar-thumb {
-    background: #FCA311;
+    background: var(--gradient-color);
 }
 /* ::-webkit-scrollbar-thumb:hover {
     background: var(--toggle-fg);
@@ -120,7 +128,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     right: 1%;
     width: 50px;
     height: 50px;
-    background-color: #FCA311;
+    background: var(--gradient-color);;
     color: white;
     border: none;
     border-radius: 50%;
@@ -135,7 +143,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
   
   /* Hover effect */
   .back-to-top:hover {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
   }
   
   /* Make the icon visible and styled */
@@ -194,7 +202,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     width: 100%;
     height: 100%;
     content: '';
-    background: #FCA311;
+    background: var(--gradient-color);
     visibility: hidden;
     opacity: 0;
     z-index: -1;
@@ -209,10 +217,12 @@ html[data-theme="dark"], body[data-theme="dark"] {
     border: 2px solid transparent;
     transition: all 0.2s ease-in-out;
     box-shadow: 0px 0px 5px rgba(255, 0, 0, 0);
+    color: var(--primary-text-color);
 }
 .nav-item:hover {
-    border-color: #FCA311;
-    box-shadow: 0px 0px 15px rgb(255, 171, 16);
+    background: var(--gradient-color);
+    box-shadow: 0px 0px 15px var(--gradient-color);
+    color: white !important;
 }
 #themeButton a,
 #themeButton:after,
@@ -241,7 +251,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     width: 100%;
     height: 100%;
     content: '';
-    background: #FCA311;
+    background: var(--gradient-color);
     border-radius: 10px;
     visibility: hidden;
     opacity: 0;
@@ -302,11 +312,11 @@ html[data-theme="dark"], body[data-theme="dark"] {
     transition: font-size 0.3s ease;
 }
 #typewriterContainer span {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 3px 2px 6px rgba(252, 163, 17, 0.6);
+    text-shadow: 3px 2px 6px var(--gradient-color);
 }
 
 #typewriterContainer2 {
@@ -320,7 +330,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 
 #contactButton {
     align-self: flex-start;
-    background-color: #FCA311;
+    background-image: var(--gradient-color); /* Use background-image for gradients */
     border: none;
     color: var(--primary-text-color); 
     border-radius: 50px;
@@ -331,11 +341,13 @@ html[data-theme="dark"], body[data-theme="dark"] {
     transition: all 0.5s ease-in-out;
 }
 
+/* Fixing Hover Effect */
 #contactButton:hover {
-    background: linear-gradient(135deg, #764BA2, #667EEA);
+    background-image: var(--gradient-hover-color); /* Ensure hover uses the same gradient */
     transform: translateX(-5px) scale(1.05);
     padding-right: 50px;
 }
+
 
 #contactButton::after {
     content: " →";
@@ -417,7 +429,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(2px 2px 15px rgba(252, 163, 17, 0.6));
+    filter: drop-shadow(2px 2px 15px var(--gradient-color));
 }
 
 
@@ -438,7 +450,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     margin-bottom: 30px;
 }
 #aboutHeader > span {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -463,7 +475,9 @@ html[data-theme="dark"], body[data-theme="dark"] {
 
 /* Top Left - Paragraph */
 .about-text {
-    border: 2px solid #FCA311;
+    border: 4px solid transparent; /* Set transparent border */
+    border-image-source: var(--gradient-color); /* Apply gradient as border */
+    border-image-slice: 1; /* Ensures full border coverage */
     padding: 1em 2em;
     text-align: left;
     min-height: 50%;
@@ -502,7 +516,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     text-align: center;
 }
 #skillsHeader > span {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -559,12 +573,8 @@ html[data-theme="dark"], body[data-theme="dark"] {
     height: 105%;
     top: 50%;
     left: 50%;
-    background-image: conic-gradient(
-        from var(--angle), transparent 80%, #ff6f61, #FCA311
-    ), 
-    conic-gradient(
-        from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311
-    );
+    background-image: conic-gradient(from var(--angle), transparent 80%, var(--gradient-start), var(--gradient-end)), 
+    conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, var(--gradient-start), var(--gradient-end));
     translate: -50% -50%;
     border-radius: 15px;
     opacity: 0; /* Initially hidden */
@@ -634,7 +644,10 @@ html[data-theme="dark"], body[data-theme="dark"] {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #FCA311; /* Adjust color as needed */
+    background: var(--gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-transform: uppercase;
 }
 
@@ -652,12 +665,15 @@ html[data-theme="dark"], body[data-theme="dark"] {
     position: relative;
     width: 80px;
     height: 80px;
-    background-color: #1E1E1E;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-image-source: var(--gradient-color);
+    border-image-slice: 2;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    transition: transform 0.3s ease-in-out, background-image 0.3s ease-in-out;
     padding: 10px;
     cursor: pointer;
 }
@@ -702,7 +718,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 /* Hover Effect */
 .tech-card:hover {
     transform: scale(1.1);
-    background-color: #FCA311;
+    background-image: var(--gradient-hover-color); /* Apply gradient on hover */
 }
 
 
@@ -741,7 +757,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     align-items: center;
 }
 #projectsHeader > span {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -763,13 +779,13 @@ html[data-theme="dark"], body[data-theme="dark"] {
 #projectCardContainer .projectCard {
     position: relative;
     background-color: #2A2A2A;
-    border-radius: 4px;
+    border-radius: 12px;
     transition: all 0.3s ease-in-out;
     z-index: 2;
 }
 
 .techStack {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -790,7 +806,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     transition: all 0.1s ease-out;
     background: #000000;
     color: white;
-    border-radius: 4px;
+    border-radius: 12px;
     padding: 2em;
     text-align: center;
     display: flex;
@@ -818,8 +834,8 @@ html[data-theme="dark"], body[data-theme="dark"] {
     height: 105%;
     top: 50%;
     left: 50%;
-    background-image: conic-gradient(from var(--angle), transparent 80%, #ff6f61, #FCA311), 
-                      conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311);
+    background-image: conic-gradient(from var(--angle), transparent 80%, var(--gradient-start), var(--gradient-end)), 
+    conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, var(--gradient-start), var(--gradient-end));
     translate: -50% -50%;
     border-radius: 12px;
     padding: 10px;
@@ -905,15 +921,31 @@ html[data-theme="dark"], body[data-theme="dark"] {
 .gitIcon,
 .circleIcon {
     font-size: 2.5em;
-    color: #FCA311;
+    background: var(--gradient-color); /* Apply the gradient */
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For Chrome, Safari */
+    -moz-background-clip: text; /* For Firefox (not widely supported) */
+    -o-background-clip: text; /* Opera (older versions) */
+    -ms-background-clip: text; /* Internet Explorer/Edge (not widely supported) */
+    -webkit-text-fill-color: transparent; /* Make text transparent */
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
+/* Hover Effect */
 .gitIcon:hover,
 .circleIcon:hover {
-    color: white;
+    background: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
+
+
 
 
 
@@ -930,16 +962,23 @@ html[data-theme="dark"], body[data-theme="dark"] {
 }
 
 .footer-icon {
-    color: #FCA311; /* Custom Icon Color */
+    background: var(--gradient-color); /* Apply the gradient */
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For Chrome, Safari */
+    -moz-background-clip: text; /* For Firefox (not widely supported) */
+    -o-background-clip: text; /* Opera (older versions) */
+    -ms-background-clip: text; /* Internet Explorer/Edge (not widely supported) */
+    -webkit-text-fill-color: transparent; /* Make text transparent */
     font-size: 2em;
     transition: color 0.3s ease-in-out;
 }
 
 .footer-icon:hover {
-    color: #ffffff; /* Change to white on hover */
+    background: none;
+    -webkit-text-fill-color: white; /* Override gradient with solid white */
 }
 .footerContainer span {
-    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
