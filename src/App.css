@@ -38,7 +38,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 .pointCardBodyItem,
 .about-text,
 .xp,
-#xpHeader,
+#skillsHeader,
 #aboutHeader,
 #projectsHeader,
 #typewriterContainer,
@@ -68,7 +68,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 #firstPointContainer h4,
 #secondPointContainer h4,
 #thirdPointContainer h4,
-#xpHeader,
+#skillsHeader,
 #projectsHeader,
 .card-title {
     font-family: var(--font-primary);
@@ -306,7 +306,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 8px rgba(252, 163, 17, 0.6);
+    text-shadow: 3px 2px 6px rgba(252, 163, 17, 0.6);
 }
 
 #typewriterContainer2 {
@@ -411,13 +411,13 @@ html[data-theme="dark"], body[data-theme="dark"] {
 
 .typed-color-1, 
 .typed-color-2, 
-.typed-color-3,
+.typed-color-3, 
 .typed-color-4 {
     background: linear-gradient(90deg, #ff6f61, #FCA311);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 10px rgba(252, 163, 17, 0.6);
+    filter: drop-shadow(2px 2px 15px rgba(252, 163, 17, 0.6));
 }
 
 
@@ -437,18 +437,24 @@ html[data-theme="dark"], body[data-theme="dark"] {
     text-align: center;
     margin-bottom: 30px;
 }
+#aboutHeader > span {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /* Grid Layout - 2 Columns by 2 Rows */
 .about-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 20px;
     justify-content: space-between;
     align-items: stretch;
 }
 
 /* Each Section in the Grid */
-.about-text, .about-image, .about-cards, .tech-stack {
+.about-text, .about-image {
     flex: 1 1 calc(50% - 10px); /* 50% width minus spacing */
     display: flex;
     justify-content: center;
@@ -461,8 +467,9 @@ html[data-theme="dark"], body[data-theme="dark"] {
     padding: 1em 2em;
     text-align: left;
     min-height: 50%;
-    font-size: 1.7em;
+    font-size: 1.4em;
     border-radius: 15px;
+    margin: 20% 1em;
 }
 
 /* Top Right - Image */
@@ -471,10 +478,36 @@ html[data-theme="dark"], body[data-theme="dark"] {
     max-width: 600px;
     border-radius: 67% 33% 69% 31% / 42% 33% 67% 58%; 
     object-fit: cover;
-    /* border: 3px solid #FCA311; */
-    margin: 1em 2em;
+    margin: 2em 4em;
+    padding: 1em 2em;
 }
 
+/* ---------------- Responsive Design ---------------- */
+@media (max-width: 992px) {
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text, .about-image {
+        width: 100%;
+    }
+}
+
+/* ------------------------------------------------------------------------Skills -------------------------------------------------------------------- */
+#xpContainer {
+    margin-bottom: 15%;
+}
+#skillsHeader {
+    text-align: center;
+}
+#skillsHeader > span {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Individual Cards */
 /* Bottom Left - 3 Horizontally Aligned Cards */
 .about-cards {
     display: flex;
@@ -483,8 +516,6 @@ html[data-theme="dark"], body[data-theme="dark"] {
     align-self: flex-start;
     margin: 2em 4em;
 }
-
-/* Individual Cards */
 /* Wrapper that holds the card and background */
 .custom-card-wrapper {
     position: relative; /* Allows pseudo-elements to exist behind */
@@ -524,22 +555,32 @@ html[data-theme="dark"], body[data-theme="dark"] {
 .custom-card-wrapper::after {
     content: '';
     position: absolute;
-    width: 101%;
-    height: 101%;
+    width: 105%;
+    height: 105%;
     top: 50%;
     left: 50%;
-    background-image: conic-gradient(from var(--angle),transparent 80%, #ff6f61, #FCA311), conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311);;
+    background-image: conic-gradient(
+        from var(--angle), transparent 80%, #ff6f61, #FCA311
+    ), 
+    conic-gradient(
+        from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311
+    );
     translate: -50% -50%;
-    /* z-index: -1; */
     border-radius: 15px;
-    animation: spin 9s linear infinite;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in on hover */
 }
 
 /* Adds a blurred glow effect */
 .custom-card-wrapper::before {
-    filter: blur(2.5rem);
-    opacity: 0.6;
-    /* z-index: -2; */
+    filter: blur(0.5rem);
+}
+
+/* Apply animation only when hovering over .custom-card-wrapper */
+.custom-card-wrapper:hover::before,
+.custom-card-wrapper:hover::after {
+    opacity: 0.6; /* Make the effect visible */
+    animation: spin 9s linear infinite;
 }
 
 /* Keyframe Animation */
@@ -551,6 +592,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
         --angle: 360deg;
     }
 }
+
 
 
 /* Icon & Text Size in Cards */
@@ -570,39 +612,91 @@ html[data-theme="dark"], body[data-theme="dark"] {
     margin-top: 5px;
 }
 
-/* Bottom Right - Tech Stack Grid (3 Rows x 6 Columns) */
+/* Main Tech Stack Container */
 .tech-stack {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 10px;
-    justify-content: center;
-    padding: 2em 4em;
-    margin: 4em 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Small Tech Stack Cards */
+/* Each Tech Category Section */
+.tech-category {
+    text-align: center;
+    width: 100%;
+}
+
+/* Section Headers */
+.tech-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #FCA311; /* Adjust color as needed */
+    text-transform: uppercase;
+}
+
+/* Tech Grid Layout */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* Tooltip Container */
 .tech-card {
-    width: 60px;
-    height: 60px;
+    position: relative;
+    width: 80px;
+    height: 80px;
     background-color: #1E1E1E;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease-in-out;
-    padding: 0.3em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    padding: 10px;
+    cursor: pointer;
 }
+
+/* Tech Icons */
 .tech-icon {
-    width: 80%; /* Adjust to fit */
+    width: 70%;
     height: auto;
     object-fit: contain;
 }
 
-/* Tech Stack Icons */
-.tech-card i {
-    font-size: 20px;
-    color: #F4F4F4;
+/* Tooltip Text */
+.tech-card::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%; /* Positioned slightly above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* ❌ REMOVE ARROW by deleting this */
+.tech-card::after {
+    content: none;
+}
+
+/* Show Tooltip on Hover */
+.tech-card:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
 }
 
 /* Hover Effect */
@@ -611,32 +705,27 @@ html[data-theme="dark"], body[data-theme="dark"] {
     background-color: #FCA311;
 }
 
-/* ---------------- Responsive Design ---------------- */
+
+/* Responsive Design */
 @media (max-width: 992px) {
-    .about-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-text, .about-image, .about-cards, .tech-stack {
-        width: 100%;
-    }
-
-    .about-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tech-stack {
-        grid-template-columns: repeat(3, 1fr);
+    .tech-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .tech-stack {
+    .tech-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+@media (max-width: 480px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
 
 
 
@@ -650,6 +739,12 @@ html[data-theme="dark"], body[data-theme="dark"] {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+#projectsHeader > span {
+    background: linear-gradient(90deg, #ff6f61, #FCA311);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 /* #projectCardContainer .projectCard {
     margin: 30px 30px;
@@ -723,19 +818,25 @@ html[data-theme="dark"], body[data-theme="dark"] {
     height: 105%;
     top: 50%;
     left: 50%;
-    background-image: conic-gradient(from var(--angle),transparent 80%, #ff6f61, #FCA311), conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311);;
+    background-image: conic-gradient(from var(--angle), transparent 80%, #ff6f61, #FCA311), 
+                      conic-gradient(from calc(var(--angle) + 180deg), transparent 80%, #ff6f61, #FCA311);
     translate: -50% -50%;
-    /* z-index: -1; */
     border-radius: 12px;
     padding: 10px;
-    animation: spin 9s linear infinite;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition effect */
 }
 
 /* Adds a blurred glow effect */
 .topCard::before {
-    filter: blur(2.5rem);
-    opacity: 0.6;
-    /* z-index: -2; */
+    filter: blur(0.5rem);
+}
+
+/* Activate animation only on hover */
+.topCard:hover::before,
+.topCard:hover::after {
+    opacity: 1; /* Make the glow visible */
+    animation: spin 9s linear infinite; /* Only start the animation on hover */
 }
 
 /* Keyframe Animation */
@@ -749,51 +850,70 @@ html[data-theme="dark"], body[data-theme="dark"] {
 }
 
 /* === Icon Styles === */
-.gitIcon, .circleIcon {
-    color: #FCA311;
-    transition: all 0.3s ease-in-out;
-    font-size: 2em;
-    position: relative;
-}
-
-.gitIcon {
-    margin-right: 15px;
-}
-
-.gitIcon:hover, .circleIcon:hover {
-    color: white;
-}
-
-/* === Comment Box Hover Effect (Positioned Above the Icons) === */
+/* Icon Container */
 .icon-container2 {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+/* Tooltip Wrapper */
+.tooltip-container {
     position: relative;
     display: inline-block;
 }
 
-.comment-box {
+/* Tooltip Text */
+.tooltip {
     position: absolute;
-    bottom: 40px;
+    bottom: 140%;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
+    font-size: 0.8rem;
     padding: 6px 10px;
     border-radius: 5px;
     white-space: nowrap;
-    font-size: 0.9rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    z-index: 10;
     pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    padding: 1em;
 }
 
-.icon-container2:hover .comment-box {
+/* Tooltip Arrow */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+/* Show Tooltip on Hover */
+.tooltip-container:hover .tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-5px);
 }
 
+/* Icon Hover Effect */
+.gitIcon,
+.circleIcon {
+    font-size: 2.5em;
+    color: #FCA311;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.gitIcon:hover,
+.circleIcon:hover {
+    color: white;
+}
 
 
 
@@ -830,13 +950,13 @@ html[data-theme="dark"], body[data-theme="dark"] {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-/* .one-item {
+ /* .one-item {
     background-color: #00a6ff;
 }
 .two-item {
     background-color: #9900ff;
-}
-.three-item {
+} */
+/* .three-item {
     background-color: #ff0000;
 }
 .four-item {
