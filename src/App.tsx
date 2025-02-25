@@ -118,7 +118,7 @@ export const App = () => {
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">E-commerce App</h5>
         <p className="card-text techStack">React, TypeScript, HTML, CSS</p>
-        <p className="card-text flex-grow-1">Shop around with a mock E-commerce app complete with customers, products, orders, and a shopping cart.</p>
+        <p className="card-text flex-grow-1 projectDesc">Shop around with a mock E-commerce app complete with customers, products, orders, and a shopping cart.</p>
         <div className="icon-container2">
           <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
@@ -142,7 +142,7 @@ export const App = () => {
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Marvel API</h5>
         <p className="card-text techStack">React, HTML, CSS</p>
-        <p className="card-text flex-grow-1">Search for your favorite Marvel character or comic book with this website connected to the Marvel API.</p>
+        <p className="card-text flex-grow-1 projectDesc">Search for your favorite Marvel character or comic book with this website connected to the Marvel API.</p>
         <div className="icon-container2">
           <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
@@ -166,7 +166,7 @@ export const App = () => {
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Task Manager App</h5>
         <p className="card-text techStack">TypeScript, JS, HTML, CSS, Auth0</p>
-        <p className="card-text flex-grow-1">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard.</p>
+        <p className="card-text flex-grow-1 projectDesc">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard.</p>
         <div className="icon-container2">
           <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
@@ -217,6 +217,7 @@ export const App = () => {
         {/* --------------------------------------------------- Skills/Experience Section --------------------------------------------------- */}
         <div id="xpContainer">
           <h1 id="skillsHeader">My Competitive <span>Edge</span></h1>
+          <div className="wrapper2">
         <div className="three-item">
   <div className="about-cards">
     {/* Fullstack Development */}
@@ -242,7 +243,7 @@ export const App = () => {
       <div className="custom-card">
         <i className="bi bi-puzzle-fill"></i>
         <h4>Problem-Solving</h4>
-        <p>I specialize in optimizing workflows and enhancing efficiency by implementing streamlined processes, automation, and scalable solutions that improve productivity and performance.</p>
+        <p>I've battled through the <a href="https://www.codewars.com/users/alexito17/stats" className="codewarsText">Codewars</a> ranks, slicing through katas with <strong>408 honor</strong> to my name and a <strong>5 kyu belt</strong>—just enough to flex, but not enough to retire.</p>
       </div>
     </div>
   </div>
@@ -310,7 +311,7 @@ export const App = () => {
 
   </div>
 </div>
-
+</div>
 
 </div>
 

@@ -62,11 +62,14 @@ export const Contact = () => {
                         <Button className="btn back-nav-item backButton">Back</Button>
                     </Link>
 
-                    <div className="navbar-nav ms-auto">
-                        <a className="nav-item nav-link" id="themeButton" href="#">
-                            <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
-                        </a>
-                    </div>
+                    <div 
+    className="nav-item nav-link px-4 py-4" 
+    id="themeButton"
+    onClick={() => setIsDark(!isDark)}
+    style={{ cursor: "pointer" }}
+  >
+    <Toggle isChecked={isDark} handleChange={setIsDark} />
+  </div>
                 </div>
             </nav>
 
@@ -78,7 +81,7 @@ export const Contact = () => {
                     onSubmit={handleSubmit}
                 >
                     <div id="titleContainer" className="text-white text-center">
-                        <h1>Contact me</h1>
+                        <h1>Contact <span>me</span></h1>
                     </div>
 
                     <div id="emailPasswordNameContainer" className="d-flex flex-column flex-grow-1 justify-content-center">
@@ -94,7 +97,6 @@ export const Contact = () => {
                     </div>
 
                     <div id="submitContainer" className="text-center">
-                        {/* <button type="submit" className="btn btn-two">Submit</button> */}
                         <Button type="submit" className="btn btn-two" id="contactButton2">
                             Submit
                         </Button>
