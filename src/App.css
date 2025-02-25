@@ -517,7 +517,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 
 /* ------------------------------------------------------------------------Skills -------------------------------------------------------------------- */
 #xpContainer {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 #skillsHeader {
     text-align: center;
@@ -728,7 +728,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 /* ---------------------techStack test--------------------------------- */
 .tech-stack-container {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
   }
   
   /* Buttons for Category Selection */
