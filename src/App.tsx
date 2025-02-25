@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Toggle } from "./context/ThemeToggle";
 import { ReactTyped } from "react-typed";
 import  BackToTopButton  from "./components/topButton";
+import TechStack from './components/techStack';
 
 
 export const App = () => {
@@ -195,9 +196,9 @@ export const App = () => {
   <div className="one-item">
   <div className="about-text">
       <p>
-        I’m a **Full-Stack Developer** passionate about building scalable, user-friendly applications. 
-        With a background in the **Air National Guard**, I bring discipline, adaptability, and problem-solving to every project. 
-        My expertise includes **React, TypeScript, Firebase, Python, and SQL**, and I love turning ideas into impactful solutions.
+        I’m a Full-Stack Developer passionate about building scalable, user-friendly applications. 
+        With a background in the Air National Guard, I bring discipline, adaptability, and problem-solving to every project. 
+        My expertise includes React, TypeScript, Firebase, Python, and SQL, and I love turning ideas into impactful solutions.
       </p>
     </div>
   </div>
@@ -248,11 +249,10 @@ export const App = () => {
     </div>
   </div>
 </div>
-
-<div className="four-item">
+<TechStack />
+{/* <div className="four-item">
   <div className="tech-stack">
 
-    {/* Front-End Section */}
     <div className="tech-category">
       <h3 className="tech-header">Front-End</h3>
       <div className="tech-grid">
@@ -274,7 +274,6 @@ export const App = () => {
       </div>
     </div>
 
-    {/* Back-End Section */}
     <div className="tech-category">
       <h3 className="tech-header">Back-End</h3>
       <div className="tech-grid">
@@ -291,7 +290,6 @@ export const App = () => {
       </div>
     </div>
 
-    {/* Tools Section */}
     <div className="tech-category">
       <h3 className="tech-header">Tools</h3>
       <div className="tech-grid">
@@ -310,7 +308,7 @@ export const App = () => {
     </div>
 
   </div>
-</div>
+</div> */}
 </div>
 
 </div>

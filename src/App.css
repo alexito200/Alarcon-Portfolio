@@ -517,7 +517,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 
 /* ------------------------------------------------------------------------Skills -------------------------------------------------------------------- */
 #xpContainer {
-    margin-bottom: 15%;
+    margin-bottom: 10%;
 }
 #skillsHeader {
     text-align: center;
@@ -638,7 +638,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 }
 
 /* Main Tech Stack Container */
-.tech-stack {
+/* .tech-stack {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -648,13 +648,11 @@ html[data-theme="dark"], body[data-theme="dark"] {
     margin: auto;
 }
 
-/* Each Tech Category Section */
 .tech-category {
     text-align: center;
     width: 100%;
 }
 
-/* Section Headers */
 .tech-header {
     font-size: 1.8rem;
     font-weight: bold;
@@ -666,23 +664,21 @@ html[data-theme="dark"], body[data-theme="dark"] {
     text-transform: uppercase;
 }
 
-/* Tech Grid Layout */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 15px;
     justify-content: center;
     padding: 10px 0;
-}
+} */
 
-/* Tooltip Container */
 .tech-card {
     position: relative;
     width: 80px;
     height: 80px;
     background-color: transparent;
     border: 2px solid transparent;
-    border-image-source: var(--gradient-color);
+    /* border-image-source: var(--gradient-color); */
     border-image-slice: 2;
     border-radius: 10px;
     display: flex;
@@ -693,18 +689,16 @@ html[data-theme="dark"], body[data-theme="dark"] {
     cursor: pointer;
 }
 
-/* Tech Icons */
 .tech-icon {
     width: 70%;
     height: auto;
     object-fit: contain;
 }
 
-/* Tooltip Text */
 .tech-card::before {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 110%; /* Positioned slightly above the card */
+    bottom: 90%;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.85);
@@ -718,23 +712,95 @@ html[data-theme="dark"], body[data-theme="dark"] {
     transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* ❌ REMOVE ARROW by deleting this */
 .tech-card::after {
     content: none;
 }
 
-/* Show Tooltip on Hover */
 .tech-card:hover::before {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-5px);
 }
 
-/* Hover Effect */
 .tech-card:hover {
     transform: scale(1.1);
-    /* background-image: var(--gradient-hover-color); */
 }
+/* ---------------------techStack test--------------------------------- */
+.tech-stack-container {
+    text-align: center;
+    margin-top: 10%;
+  }
+  
+  /* Buttons for Category Selection */
+  .category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .category-btn {
+    background: var(--gradient-color);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-family: var(--font-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s ease-in-out;
+  }
+  
+  .category-btn.active {
+    background: var(--gradient-hover-color);
+    transform: scale(1.1);
+  }
+  
+  .category-btn:hover {
+    background: var(--gradient-hover-color);
+    transform: scale(1.1);
+  }
+  
+  /* Tech Grid Layout */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 0.1fr); /* 4 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    justify-content: center;
+    gap: 0; /* Remove spacing between grid items */
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  
+  /* Tech Cards */
+  .tech-card {
+    position: relative;
+    width: 100%; /* Fill the grid cell */
+    aspect-ratio: 1 / 1;
+    /* border: 4px solid transparent;
+    border-image-source: var(--gradient-color);
+    border-image-slice: 1;
+    border-radius: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    /* padding: 10px; */
+    cursor: pointer;
+  }
+  
+  .tech-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Tooltip Styling */
+  .tech-card:hover {
+    transform: scale(1.1);
+    background-color: var(--gradient-hover-color);
+  }
+  
 .codewarsText {
     text-decoration: none;
 }
@@ -1014,7 +1080,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
   }
 .wrapper2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
  /* .one-item {
     background-color: #00a6ff;
