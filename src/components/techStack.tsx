@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../App.css'
 
 type Category = "Front-End" | "Back-End" | "Tools" | "All"; // Define valid categories
 

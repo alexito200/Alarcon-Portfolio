@@ -47,7 +47,7 @@
 ------------------------------------------------------------------- */
 
 #totalContainer {
-    height: 100vh;
+    min-height: 100vh;
 }
 [data-theme="light"] #formContainer {
     background-color: var(--foreground-color);
@@ -62,13 +62,16 @@
     background-color: #2A2A2A;
     width: 100%;
     max-width: 600px;
-    height: 600px;
+    height: auto;
     padding: 2em;
     border-radius: 10px;
     margin: auto;
 }
 #titleContainer h1 {
     color: var(--primary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 #titleContainer h1 span {
     background: var(--gradient-color); /* Use your defined gradient variable */
@@ -82,6 +85,8 @@
     border: var(--foreground-color);
     color: var(--primary-text-color);
     border-radius: 10px;
+    font-size: clamp(1rem, 1.2vw, 1.3rem); /* ✅ Makes text responsive */
+    padding: 10px 15px;
 }
 .backButton,
 .backButton:after,
@@ -145,9 +150,10 @@
 }
 #emailPasswordNameContainer input,
 #emailPasswordNameContainer textarea {
+    width: 100%;
     border-radius: 10px;
     padding: 10px;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     transition: border-color 0.3s ease-in-out;
 }
 #submitContainer > #contactButton2 {
@@ -156,6 +162,7 @@
 #contactButton2 {
     background: var(--gradient-color);
     border: none;
+    font-size: clamp(1.2rem, 1.5vw, 1.3rem);
     color: white; 
     border-radius: 50px;
     padding: 10px 22px;
@@ -183,4 +190,58 @@
 #contactButton2:hover::after {
     opacity: 1;
     transform: translateY(-50%) translateX(-20px);
+}
+/* === Responsive Design Below 768px (Tablets & Smaller Screens) === */
+@media (max-width: 768px) {
+    #totalContainer {
+        padding: 1rem; /* ✅ Adds more spacing on small screens */
+        display: flex;
+        flex-direction: column; /* ✅ Stacks elements vertically */
+    }
+
+    .formContainer {
+        max-width: 90%; /* ✅ Makes it fit within smaller screens */
+        padding: 1.5em; /* ✅ Reduces padding */
+    }
+
+    #titleContainer h1 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+    }
+
+    .backButton {
+        width: 100%; /* ✅ Full-width button for better UX */
+        text-align: center;
+    }
+
+    #contactButton2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* === Responsive Design Below 480px (Mobile) === */
+@media (max-width: 480px) {
+    .formContainer {
+        max-width: 95%;
+        padding: 1.2em;
+    }
+
+    #titleContainer h1 {
+        font-size: 1.5rem;
+    }
+
+    #emailPasswordNameContainer input,
+    #emailPasswordNameContainer textarea {
+        font-size: 1rem; /* ✅ Makes inputs readable on small screens */
+        padding: 8px; /* ✅ Reduces padding */
+    }
+
+    .backButton {
+        font-size: 1rem;
+    }
+
+    #contactButton2 {
+        padding: 10px;
+        font-size: 1rem;
+    }
 }
