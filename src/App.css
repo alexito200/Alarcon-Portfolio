@@ -449,13 +449,17 @@ html[data-theme="dark"], body[data-theme="dark"] {
     border-radius: 10px;
     margin: auto;
     margin-bottom: 10%;
+    padding: 2rem;
 }
 
 /* Header - Stay Centered */
 #aboutHeader {
     text-align: center;
     margin-bottom: 30px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
 }
+
 #aboutHeader > span {
     background: var(--gradient-color);
     background-clip: text;
@@ -463,64 +467,109 @@ html[data-theme="dark"], body[data-theme="dark"] {
     -webkit-text-fill-color: transparent;
 }
 
-/* Grid Layout - 2 Columns by 2 Rows */
+/* About Section Layout */
 .about-grid {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* ✅ Allows wrapping on smaller screens */
     gap: 20px;
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 15px;
+}
+/* .wrapper {
+    max-width: 100%;
+} */
+.one-item {
+    flex: 1;
+    max-width: 100%;
+    text-align: center; /* ✅ Centers text on all screens */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.aboutPContainer {
+    max-width: 100%;
+    margin: auto;
+    text-align: justify; /* ✅ Keeps text well-structured */
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    padding: 0 20px; /* ✅ Adds padding to avoid text touching edges */
+}
+/* About Text */
+.about-text {
+    flex: 1 1 100%; /* ✅ Makes it take half the width */
+    font-size: clamp(1rem, 2vw, 1.4rem); /* ✅ Adjusts font size dynamically */
+    text-align: left;
+    padding: 1.5rem;
+    line-height: 1.6;
+    border-radius: 15px;
 }
 
-/* Each Section in the Grid */
-.about-text, .about-image {
-    flex: 1 1 calc(50% - 10px); /* 50% width minus spacing */
+/* About Image */
+.about-image {
+    flex: 1 1 100%; /* ✅ Matches text width */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Top Left - Paragraph */
-.about-text {
-    border: 4px solid transparent; /* Set transparent border */
-    border-image-source: var(--gradient-color); /* Apply gradient as border */
-    border-image-slice: 1; /* Ensures full border coverage */
-    padding: 1em 2em;
-    text-align: left;
-    min-height: 50%;
-    font-size: 1.4em;
-    border-radius: 15px;
-    margin: 20% 1em;
-}
-
-/* Top Right - Image */
 .about-image img {
     width: 100%;
-    max-width: 600px;
-    border-radius: 67% 33% 69% 31% / 42% 33% 67% 58%; 
+    max-width: 350px; /* ✅ Prevents oversized images */
+    height: auto;
+    /* border-radius: 67% 33% 69% 31% / 42% 33% 67% 58%; */
     object-fit: cover;
-    margin: 2em 4em;
-    padding: 1em 2em;
+    /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); */
 }
 
 /* ---------------- Responsive Design ---------------- */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .about-grid {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        padding: 0 5%; /* ✅ Ensures proper alignment */
     }
 
-    .about-text, .about-image {
-        width: 100%;
+    .one-item {
+        max-width: 100%;
+        padding: 0 5%; /* ✅ Adds breathing room */
+    }
+
+    .about-text {
+        text-align: center; /* ✅ Centers text */
+    }
+
+    .about-image img {
+        max-width: 100%;
+        margin-top: 1rem;
     }
 }
+
+@media (max-width: 480px) {
+    .about-text {
+        font-size: 1.1rem;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+}
+
+
 
 /* ------------------------------------------------------------------------Skills -------------------------------------------------------------------- */
 #xpContainer {
-    margin-bottom: 10%;
+    text-align: center;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 5%;
 }
 #skillsHeader {
     text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
 }
 #skillsHeader > span {
     background: var(--gradient-color);
@@ -534,8 +583,10 @@ html[data-theme="dark"], body[data-theme="dark"] {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
     align-self: flex-start;
-    margin: 2em 4em;
+    padding: 20px;
+    /* margin: 2em 4em; */
 }
 /* Wrapper that holds the card and background */
 .custom-card-wrapper {
@@ -543,12 +594,16 @@ html[data-theme="dark"], body[data-theme="dark"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1 1 280px;
+    min-width: 280px; /* ✅ Prevents shrinking too much */
+    max-width: 400px;
+    aspect-ratio: 7 / 8;
 }
 
 /* Individual Cards */
 .custom-card {
-    width: 240px;
-    height: 280px;
+    width: 100%;
+    height: auto;
     transition: all 0.1s ease-out;
     background: var(--card-bg-color);
     color: white;
@@ -563,6 +618,19 @@ html[data-theme="dark"], body[data-theme="dark"] {
     z-index: 2;
     overflow: visible;
     box-sizing: content-box;
+    aspect-ratio: 7 / 8;
+}
+
+@media (max-width: 768px) {
+    .custom-card-wrapper {
+        flex: 1 1 45%; /* ✅ Two cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-card-wrapper {
+        flex: 1 1 100%; /* ✅ One card per row */
+    }
 }
 
 @property --angle {
@@ -610,11 +678,9 @@ html[data-theme="dark"], body[data-theme="dark"] {
     }
 }
 
-
-
 /* Icon & Text Size in Cards */
 .custom-card i {
-    font-size: 2em;
+    font-size: 2.7em;
     margin-bottom: 5px;
     background: var(--gradient-color); /* Apply the gradient */
     background-clip: text; /* Standard property */
@@ -626,52 +692,30 @@ html[data-theme="dark"], body[data-theme="dark"] {
 }
 
 .custom-card h4 {
-    font-size: 1.2em;
-    margin-bottom: 3px;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    margin-bottom: 10px;
+    font-family: var(--font-primary);
     color: var(--primary-text-color);
 }
 
 .custom-card p {
-    font-size: 0.9em;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-family: var(--font-secondary);
     color: var(--primary-text-color);
     margin-top: 5px;
+    line-height: 1.6;
+}
+@media (max-width: 992px) {
+    .custom-card-wrapper {
+        flex: 1 1 calc(50% - 20px); /* ✅ 2 cards per row on medium screens */
+    }
 }
 
-/* Main Tech Stack Container */
-/* .tech-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
+@media (max-width: 600px) {
+    .custom-card-wrapper {
+        flex: 1 1 100%; /* ✅ 1 card per row on small screens */
+    }
 }
-
-.tech-category {
-    text-align: center;
-    width: 100%;
-}
-
-.tech-header {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    background: var(--gradient-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-}
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 15px;
-    justify-content: center;
-    padding: 10px 0;
-} */
-
 .tech-card {
     position: relative;
     width: 80px;
@@ -728,15 +772,19 @@ html[data-theme="dark"], body[data-theme="dark"] {
 /* ---------------------techStack test--------------------------------- */
 .tech-stack-container {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   /* Buttons for Category Selection */
   .category-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 1em;
     margin-bottom: 20px;
+    flex-wrap: wrap;
   }
   
   .category-btn {
@@ -763,13 +811,14 @@ html[data-theme="dark"], body[data-theme="dark"] {
   /* Tech Grid Layout */
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(4, 0.1fr); /* 4 equal columns */
-    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
-    justify-content: center;
-    gap: 0; /* Remove spacing between grid items */
-    align-items: center;
-    padding: 10px 0;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* ✅ Responsive grid */
+    justify-content: center; /* ✅ Centers the grid */
+    gap: 15px; /* ✅ Adds spacing between items */
+    padding: 20px 0;
+    max-width: 800px; /* ✅ Prevents grid from stretching too wide */
+    margin: 0 auto; /* ✅ Centers the grid container */
+}
+
 
   
   /* Tech Cards */
@@ -777,10 +826,6 @@ html[data-theme="dark"], body[data-theme="dark"] {
     position: relative;
     width: 100%; /* Fill the grid cell */
     aspect-ratio: 1 / 1;
-    /* border: 4px solid transparent;
-    border-image-source: var(--gradient-color);
-    border-image-slice: 1;
-    border-radius: 10px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -824,14 +869,11 @@ html[data-theme="dark"], body[data-theme="dark"] {
     }
 }
 
-
-
-
-
 /* ------------------------------------------------------------------- Projects -------------------------------------------------------------------- */
 /* === Project Section Styles === */
 #projectContainer {
     margin-bottom: 15%;
+    padding: 2rem;
 }
 #projectCardContainer {
     display: flex;
@@ -845,6 +887,10 @@ html[data-theme="dark"], body[data-theme="dark"] {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+#projectsHeader {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
+}
 .projectCardItem > h5 {
     color: var(--primary-text-color);
 }
@@ -855,7 +901,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
     margin: 30px 30px;
 } */
 #projectContainer h1 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     color: white;
     text-align: center;
 }
@@ -907,6 +953,19 @@ html[data-theme="dark"], body[data-theme="dark"] {
     overflow: visible;
     box-sizing: content-box;
 }
+
+.projectImgContainer {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* Maintains a 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.projectImgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 @property --angle {
     syntax: "<angle>";
@@ -1009,17 +1068,15 @@ html[data-theme="dark"], body[data-theme="dark"] {
 /* Icon Hover Effect */
 .gitIcon,
 .circleIcon {
-    font-size: 2.5em;
-    background: var(--gradient-color); /* Apply the gradient */
-    background-clip: text; /* Standard property */
-    -webkit-background-clip: text; /* For Chrome, Safari */
-    -moz-background-clip: text; /* For Firefox (not widely supported) */
-    -o-background-clip: text; /* Opera (older versions) */
-    -ms-background-clip: text; /* Internet Explorer/Edge (not widely supported) */
-    -webkit-text-fill-color: transparent; /* Make text transparent */
+    font-size: clamp(2.2em, 2vw, 2.5em);  /* Responsive scaling */
+    background: var(--gradient-color);  /* Apply the gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+
 
 /* Hover Effect */
 .gitIcon:hover,
@@ -1033,10 +1090,6 @@ html[data-theme="dark"], body[data-theme="dark"] {
     -webkit-text-fill-color: transparent;
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
-
-
-
-
 
 /* ------------------------------------------------------------------- Footer -------------------------------------------------------------------- */
 
@@ -1074,20 +1127,15 @@ html[data-theme="dark"], body[data-theme="dark"] {
 }
 
 /* ----------------------------- test ------------------------- */
-.wrapper {
+/* .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
+  } */
 .wrapper2 {
     display: grid;
     grid-template-columns: 1fr;
   }
- /* .one-item {
-    background-color: #00a6ff;
-}
-.two-item {
-    background-color: #9900ff;
-} */
+
 /* .three-item {
     background-color: #ff0000;
 }

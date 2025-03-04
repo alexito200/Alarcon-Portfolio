@@ -113,7 +113,7 @@ export const App = () => {
   {/* E-commerce App */}
   <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href='https://react-flask-project-qxux.vercel.app/' target="_blank" rel="noopener noreferrer">
+      <a href='https://react-flask-project-qxux.vercel.app/' target="_blank" rel="noopener noreferrer" className="projectImgContainer">
         <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
@@ -137,8 +137,8 @@ export const App = () => {
   {/* Marvel API */}
   <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href="#" target="_blank" rel="noopener noreferrer">
-        <img src="./psylocke-home.png" className="card-img-top" alt="Marvel API" />
+      <a href="https://comic-book-library-al9bibs1m-alex-alarcons-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="projectImgContainer">
+        <img src="./marvel-library-home.png" className="card-img-top" alt="Marvel API" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Marvel API</h5>
@@ -149,7 +149,7 @@ export const App = () => {
             <i className="bi bi-github gitIcon"></i>
             <span className="tooltip">View on GitHub</span>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://comic-book-library-al9bibs1m-alex-alarcons-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="tooltip-container">
             <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
             <span className="tooltip">Visit Project</span>
           </a>
@@ -161,8 +161,8 @@ export const App = () => {
   {/* Task Manager App */}
   <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <img src="./task-mngt-app-login.png" className="card-img-top" alt="Task Management App" />
+      <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer" className="projectImgContainer">
+        <img src="./new-taskmngt-home.png" className="card-img-top" alt="Task Management App" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Task Manager App</h5>
@@ -191,23 +191,22 @@ export const App = () => {
 
         {/* --------------------------------------------------- About Section --------------------------------------------------- */}
           <div id="aboutContainer">
-          <h1 id='aboutHeader'>A Dev & <span>Dream</span></h1>
-        <div className="wrapper">
+          <h1 id='aboutHeader'>A Dev & <span>A Dream</span></h1>
+        {/* <div className="wrapper"> */}
   <div className="one-item">
   <div className="about-text">
+    <div className="aboutPContainer">
       <p>
-        I’m a Full-Stack Developer passionate about building scalable, user-friendly applications. 
-        With a background in the Air National Guard, I bring discipline, adaptability, and problem-solving to every project. 
-        My expertise includes React, TypeScript, Firebase, Python, and SQL, and I love turning ideas into impactful solutions.
+        What makes me different? My drive. At twenty-eight, I decided to join the Air Force National Guard &#40;part-time&#41;, quit my civilian job, and pursue a career I knew little about. I've decided to give everything to this pursuit and I won't settle. My journey began September of &#39;24 where I started my software engineering cohort at Coding Temple. Six long months later and I have graduated. I truly believe that nothing is impossible if you put your mind to it. 
       </p>
-    </div>
-  </div>
-  <div className="two-item">
+      </div>
   <div className="about-image">
       <img src="./air-force-profile-picture.jpg" alt="Your Name" />
+  </div>
     </div>
+
   </div>
-  </div>
+  {/* </div> */}
 
 
 
@@ -242,73 +241,16 @@ export const App = () => {
     {/* Problem-Solving */}
     <div className="custom-card-wrapper">
       <div className="custom-card">
-        <i className="bi bi-puzzle-fill"></i>
-        <h4>Problem-Solving</h4>
+        <i className="bi bi-tools"></i>
+        <h4>Solution Bringer</h4>
         <p>I've battled through the <a href="https://www.codewars.com/users/alexito17/stats" className="codewarsText">Codewars</a> ranks, slicing through katas with <strong>408 honor</strong> to my name and a <strong>5 kyu belt</strong>—just enough to flex, but not enough to retire.</p>
       </div>
     </div>
   </div>
 </div>
-<TechStack />
-{/* <div className="four-item">
-  <div className="tech-stack">
 
-    <div className="tech-category">
-      <h3 className="tech-header">Front-End</h3>
-      <div className="tech-grid">
-        {[
-          { src: "./html.png", name: "HTML" },
-          { src: "./css.png", name: "CSS" },
-          { src: "./js.png", name: "JavaScript" },
-          { src: "./react.png", name: "React" },
-          { src: "./vite.png", name: "Vite" },
-          { src: "./redux.png", name: "Redux" },
-          { src: "./typescript.png", name: "TypeScript" },
-          { src: "./bootstrap.png", name: "Bootstrap" },
-          { src: "./react-bootstrap.png", name: "React-Bootstrap" },
-        ].map((tech, index) => (
-          <div key={index} className="tech-card" data-tooltip={tech.name}>
-            <img src={tech.src} alt={tech.name} className="tech-icon" />
-          </div>
-        ))}
-      </div>
-    </div>
+  <TechStack />
 
-    <div className="tech-category">
-      <h3 className="tech-header">Back-End</h3>
-      <div className="tech-grid">
-        {[
-          { src: "./firebase.png", name: "Firebase" },
-          { src: "./python.png", name: "Python" },
-          { src: "./mysql.png", name: "MySQL" },
-          { src: "./flask.png", name: "Flask" },
-        ].map((tech, index) => (
-          <div key={index} className="tech-card" data-tooltip={tech.name}>
-            <img src={tech.src} alt={tech.name} className="tech-icon" />
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div className="tech-category">
-      <h3 className="tech-header">Tools</h3>
-      <div className="tech-grid">
-        {[
-          { src: "./github.png", name: "GitHub" },
-          { src: "./figma.png", name: "Figma" },
-          { src: "./vs-code.png", name: "VS Code" },
-          { src: "./postman.png", name: "Postman" },
-          { src: "./vercel.png", name: "Vercel" },
-        ].map((tech, index) => (
-          <div key={index} className="tech-card" data-tooltip={tech.name}>
-            <img src={tech.src} alt={tech.name} className="tech-icon" />
-          </div>
-        ))}
-      </div>
-    </div>
-
-  </div>
-</div> */}
 </div>
 
 </div>
