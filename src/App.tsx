@@ -191,7 +191,7 @@ export const App = () => {
 
         {/* --------------------------------------------------- About Section --------------------------------------------------- */}
           <div id="aboutContainer">
-          <h1 id='aboutHeader'>A Dev & <span>A Dream</span></h1>
+          <h1 id='aboutHeader'>A Dev & <span>Dream</span></h1>
         {/* <div className="wrapper"> */}
   <div className="one-item">
   <div className="about-text">
