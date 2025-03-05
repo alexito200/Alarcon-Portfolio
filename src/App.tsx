@@ -137,7 +137,7 @@ export const App = () => {
   {/* Marvel API */}
   <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href="https://comic-book-library-al9bibs1m-alex-alarcons-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="projectImgContainer">
+      <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer" className="projectImgContainer">
         <img src="./marvel-library-home.png" className="card-img-top" alt="Marvel API" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
@@ -149,7 +149,7 @@ export const App = () => {
             <i className="bi bi-github gitIcon"></i>
             <span className="tooltip">View on GitHub</span>
           </a>
-          <a href="https://comic-book-library-al9bibs1m-alex-alarcons-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer" className="tooltip-container">
             <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
             <span className="tooltip">Visit Project</span>
           </a>
