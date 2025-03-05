@@ -1,5 +1,4 @@
 import './App.css'
-import './index.css'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
@@ -7,6 +6,7 @@ import { Toggle } from "./context/ThemeToggle";
 import { ReactTyped } from "react-typed";
 import  BackToTopButton  from "./components/topButton";
 import TechStack from './components/techStack';
+
 
 
 export const App = () => {
@@ -65,7 +65,7 @@ export const App = () => {
         {/* --------------------------------------------------- Hero Section --------------------------------------------------- */}
         <div id="heroContainer" className="d-flex flex-column flex-lg-row justify-content-center align-items-center mx-md-5">
           <div>
-            <img id="personImage" src="./profile-picture.jpeg" alt="Profile" className="img-fluid" />
+            <img id="personImage" src="./profile-picture.jpeg" alt="Profile" className="img-fluid" loading="lazy" />
           </div>
           <div id="heroTextContainer" className="text-center text-lg-start">
             <div id="typewriterContainer">
@@ -79,7 +79,7 @@ export const App = () => {
       '<span class="typed-color-3">National Guardsman</span>',
       '<span class="typed-color-4">Fullstack Developer</span>'
     ]}
-    typeSpeed={140}
+    typeSpeed={80}
     loop
     smartBackspace
   />
@@ -113,19 +113,19 @@ export const App = () => {
   {/* E-commerce App */}
   <div className="col-12 col-sm-5.5 col-md-6 col-lg-4 d-flex topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href='https://react-flask-project-qxux.vercel.app/' target="_blank" rel="noopener noreferrer" className="projectImgContainer">
-        <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" />
+      <a href='https://react-flask-project-qxux.vercel.app/' target="_blank" rel="noopener noreferrer preload" className="projectImgContainer">
+        <img src="./react-flask.jpeg" className="card-img-top" alt="React Flask Project" loading="lazy" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">E-commerce App</h5>
         <p className="card-text techStack">React, TypeScript, HTML, CSS</p>
         <p className="card-text flex-grow-1 projectDesc">Shop around with a mock E-commerce app complete with customers, products, orders, and a shopping cart.</p>
         <div className="icon-container2">
-          <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://github.com/alexito200/react-flask-project" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
             <span className="tooltip">View on GitHub</span>
           </a>
-          <a href="https://react-flask-project-qxux.vercel.app/" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://react-flask-project-qxux.vercel.app/" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
             <span className="tooltip">Visit Project</span>
           </a>
@@ -137,19 +137,19 @@ export const App = () => {
   {/* Marvel API */}
   <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer" className="projectImgContainer">
-        <img src="./marvel-library-home.png" className="card-img-top" alt="Marvel API" />
+      <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer preload" className="projectImgContainer">
+        <img src="./marvel-library-home.png" className="card-img-top" alt="Marvel API" loading="lazy" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Marvel API</h5>
         <p className="card-text techStack">React, HTML, CSS</p>
         <p className="card-text flex-grow-1 projectDesc">Search for your favorite Marvel character or comic book with this website connected to the Marvel API.</p>
         <div className="icon-container2">
-          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
             <span className="tooltip">View on GitHub</span>
           </a>
-          <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
             <span className="tooltip">Visit Project</span>
           </a>
@@ -161,19 +161,19 @@ export const App = () => {
   {/* Task Manager App */}
   <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex order-md-last mx-auto topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer" className="projectImgContainer">
-        <img src="./new-taskmngt-home.png" className="card-img-top" alt="Task Management App" />
+      <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer preload" className="projectImgContainer">
+        <img src="./new-taskmngt-home.png" className="card-img-top" alt="Task Management App" loading="lazy" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Task Manager App</h5>
         <p className="card-text techStack">TypeScript, JS, HTML, CSS, Auth0</p>
         <p className="card-text flex-grow-1 projectDesc">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard.</p>
         <div className="icon-container2">
-          <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
             <span className="tooltip">View on GitHub</span>
           </a>
-          <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer" className="tooltip-container">
+          <a href="https://task-mngt-app-rjmb.vercel.app/" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
             <span className="tooltip">Visit Project</span>
           </a>
@@ -201,7 +201,7 @@ export const App = () => {
       </p>
       </div>
   <div className="about-image">
-      <img src="./air-force-profile-picture.jpg" alt="Your Name" />
+      <img src="./air-force-profile-picture.jpg" alt="Your Name" loading="lazy" />
   </div>
     </div>
 
