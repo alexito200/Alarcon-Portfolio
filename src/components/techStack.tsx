@@ -23,9 +23,7 @@ const techCategories: Record<Exclude<Category, "All">, { src: string; name: stri
   ],
   "Tools": [
     { src: "./github.png", name: "GitHub" },
-    { src: "./figma.png", name: "Figma" },
     { src: "./vs-code.png", name: "VS Code" },
-    { src: "./postman.png", name: "Postman" },
     { src: "./vercel.png", name: "Vercel" },
   ],
 };

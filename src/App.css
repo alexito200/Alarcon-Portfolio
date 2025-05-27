@@ -444,7 +444,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 /* Main Container */
 #aboutContainer {
     color: white;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     border-radius: 10px;
     margin: auto;
@@ -468,16 +468,16 @@ html[data-theme="dark"], body[data-theme="dark"] {
 }
 
 /* About Section Layout */
-.about-grid {
+/* .about-grid {
     display: flex;
-    flex-wrap: wrap; /* ✅ Allows wrapping on smaller screens */
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 100px;
     justify-content: center;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     padding: 0 15px;
-}
+} */
 /* .wrapper {
     max-width: 100%;
 } */
@@ -516,7 +516,7 @@ html[data-theme="dark"], body[data-theme="dark"] {
 
 .about-image img {
     width: 100%;
-    max-width: 350px; /* ✅ Prevents oversized images */
+    max-width: 60%; /* ✅ Prevents oversized images */
     height: auto;
     /* border-radius: 67% 33% 69% 31% / 42% 33% 67% 58%; */
     object-fit: cover;

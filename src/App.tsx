@@ -137,19 +137,19 @@ export const App = () => {
   {/* Marvel API */}
   <div className="col-12 col-sm-6.5 col-md-6 col-lg-4 d-flex topCard">
     <div className="card projectCard d-flex flex-column w-100">
-      <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer preload" className="projectImgContainer">
-        <img src="./marvel-library-home.png" className="card-img-top" alt="Marvel API" loading="lazy" />
+      <a href="https://getpennypilot.com/" target="_blank" rel="noopener noreferrer preload" className="projectImgContainer">
+        <img src="./penny pilot carousel.png" className="card-img-top" alt="PennyPilot project" loading="lazy" />
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
-        <h5 className="card-title">Marvel API</h5>
-        <p className="card-text techStack">React, HTML, CSS</p>
-        <p className="card-text flex-grow-1 projectDesc">Search for your favorite Marvel character or comic book with this website connected to the Marvel API.</p>
+        <h5 className="card-title">PennyPilot</h5>
+        <p className="card-text techStack">React, Flask, AWS</p>
+        <p className="card-text flex-grow-1 projectDesc">A gamified financial advisor application built to make finances fun. Developed at a tech residency with a group of developers.</p>
         <div className="icon-container2">
-          <a href="https://github.com/alexito200/comic-book-library" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
+          <a href="https://github.com/PennyPilot-Tech-Residency-37/pennypilot" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-github gitIcon"></i>
             <span className="tooltip">View on GitHub</span>
           </a>
-          <a href="https://comic-book-library.vercel.app" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
+          <a href="https://getpennypilot.com/" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
             <i className="bi bi-arrow-up-right-circle-fill circleIcon"></i>
             <span className="tooltip">Visit Project</span>
           </a>
@@ -166,7 +166,7 @@ export const App = () => {
       </a>
       <div className="card-body projectCardItem d-flex flex-column flex-grow-1">
         <h5 className="card-title">Task Manager App</h5>
-        <p className="card-text techStack">TypeScript, JS, HTML, CSS, Auth0</p>
+        <p className="card-text techStack">TypeScript, HTML, CSS, Auth0</p>
         <p className="card-text flex-grow-1 projectDesc">The Task Management App allows users to log in via Auth0, create, view, edit, and manage tasks through a structured dashboard.</p>
         <div className="icon-container2">
           <a href="https://github.com/alexito200/task-mngt-app" target="_blank" rel="noopener noreferrer preload" className="tooltip-container">
@@ -197,7 +197,7 @@ export const App = () => {
   <div className="about-text">
     <div className="aboutPContainer">
       <p>
-        What makes me different? My drive. At twenty-eight, I decided to join the Air Force National Guard &#40;part-time&#41;, quit my civilian job, and pursue a career I knew little about. I've decided to give everything to this pursuit and I won't settle. My journey began September of &#39;24 where I started my software engineering cohort at Coding Temple. Six long months later and I have graduated. I truly believe that nothing is impossible if you put your mind to it. 
+        What makes me different? My drive. In 2023, I decided to join the Air Force National Guard &#40;part-time&#41;, quit my civilian job, and pursue a career I knew little about. I've decided to give everything to this pursuit and I won't settle. My journey began September of &#39;24 where I started my software engineering cohort at Coding Temple. Six long months later and I have graduated. I truly believe that nothing is impossible if you put your mind to it. 
       </p>
       </div>
   <div className="about-image">
